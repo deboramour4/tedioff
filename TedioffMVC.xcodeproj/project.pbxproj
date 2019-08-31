@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E5220401231AA25F0092C100 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5220400231AA25F0092C100 /* CardView.swift */; };
+		E5220403231AA2DA0092C100 /* CardRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5220402231AA2DA0092C100 /* CardRowView.swift */; };
+		E5220406231AA3CC0092C100 /* UIFonts+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5220405231AA3CC0092C100 /* UIFonts+Custom.swift */; };
+		E5220408231AAF680092C100 /* UIColor+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5220407231AAF680092C100 /* UIColor+Custom.swift */; };
 		E5D3CDBA23193B7D006A03A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D3CDB923193B7D006A03A9 /* AppDelegate.swift */; };
 		E5D3CDBC23193B7D006A03A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D3CDBB23193B7D006A03A9 /* ViewController.swift */; };
 		E5D3CDC223193B7D006A03A9 /* TedioffMVC.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E5D3CDC023193B7D006A03A9 /* TedioffMVC.xcdatamodeld */; };
@@ -40,6 +44,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E5220400231AA25F0092C100 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		E5220402231AA2DA0092C100 /* CardRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRowView.swift; sourceTree = "<group>"; };
+		E5220405231AA3CC0092C100 /* UIFonts+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFonts+Custom.swift"; sourceTree = "<group>"; };
+		E5220407231AAF680092C100 /* UIColor+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Custom.swift"; sourceTree = "<group>"; };
 		E5D3CDB623193B7D006A03A9 /* TedioffMVC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TedioffMVC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5D3CDB923193B7D006A03A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5D3CDBB23193B7D006A03A9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,7 +66,7 @@
 		E5D3CDF22319401E006A03A9 /* ActivityType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityType.swift; sourceTree = "<group>"; };
 		E5D3CDF423194293006A03A9 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		E5D3CDF623198042006A03A9 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
-		E5D3CDF823198996006A03A9 /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
+		E5D3CDF823198996006A03A9 /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+Constraints.swift"; path = "../UIView+Constraints.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +94,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E5220404231AA2E10092C100 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E5D3CDF823198996006A03A9 /* UIView+Constraints.swift */,
+				E5220405231AA3CC0092C100 /* UIFonts+Custom.swift */,
+				E5220407231AAF680092C100 /* UIColor+Custom.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		E5D3CDAD23193B7D006A03A9 = {
 			isa = PBXGroup;
 			children = (
@@ -152,8 +170,10 @@
 		E5D3CDEB23193E39006A03A9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E5220404231AA2E10092C100 /* Extensions */,
 				E5D3CDF623198042006A03A9 /* View.swift */,
-				E5D3CDF823198996006A03A9 /* UIView+Constraints.swift */,
+				E5220400231AA25F0092C100 /* CardView.swift */,
+				E5220402231AA2DA0092C100 /* CardRowView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -306,11 +326,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5D3CDF723198042006A03A9 /* View.swift in Sources */,
+				E5220406231AA3CC0092C100 /* UIFonts+Custom.swift in Sources */,
 				E5D3CDF123193F09006A03A9 /* Network.swift in Sources */,
 				E5D3CDF523194293006A03A9 /* NetworkError.swift in Sources */,
 				E5D3CDF923198996006A03A9 /* UIView+Constraints.swift in Sources */,
+				E5220401231AA25F0092C100 /* CardView.swift in Sources */,
+				E5220408231AAF680092C100 /* UIColor+Custom.swift in Sources */,
 				E5D3CDBC23193B7D006A03A9 /* ViewController.swift in Sources */,
 				E5D3CDC223193B7D006A03A9 /* TedioffMVC.xcdatamodeld in Sources */,
+				E5220403231AA2DA0092C100 /* CardRowView.swift in Sources */,
 				E5D3CDEF23193EF9006A03A9 /* Activity.swift in Sources */,
 				E5D3CDF32319401E006A03A9 /* ActivityType.swift in Sources */,
 				E5D3CDBA23193B7D006A03A9 /* AppDelegate.swift in Sources */,
@@ -483,6 +507,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4YUW7D4357;
 				INFOPLIST_FILE = TedioffMVC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -501,6 +526,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4YUW7D4357;
 				INFOPLIST_FILE = TedioffMVC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

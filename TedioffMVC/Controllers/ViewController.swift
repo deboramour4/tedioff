@@ -15,7 +15,12 @@ class ViewController: UIViewController {
     var activity: Activity? {
         didSet {
             DispatchQueue.main.sync {
-                self.mainView.activityLabel.text = activity?.description
+                self.mainView.activityTitle = activity?.activity
+                self.mainView.activityType = activity?.type.rawValue
+                self.mainView.activityAccessibility = activity?.accessibility
+                self.mainView.activityPrice = activity?.price
+                self.mainView.activityParticipants = activity?.participants
+                
             }
         }
     }

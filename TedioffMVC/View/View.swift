@@ -8,11 +8,44 @@
 
 import UIKit
 
+//
+// MARK: - View
+//
 class View: UIView {
-
+    //
+    // MARK: - Variables and Delegates
+    // FIXME: Isso ta certo?
     weak var delegate: ViewDelegate?
+    var activityTitle: String? {
+        didSet {
+            cardView.title = activityTitle
+        }
+    }
+    var activityType: String? {
+        didSet {
+            cardView.type = activityType
+        }
+    }
+    var activityAccessibility: Float? {
+        didSet {
+            cardView.accessibility = activityAccessibility
+        }
+    }
+    var activityPrice: Float? {
+        didSet {
+            cardView.price = activityPrice
+        }
+    }
+    var activityParticipants: Int? {
+        didSet {
+            cardView.participants = activityParticipants
+        }
+    }
     
-    lazy var hatImage: UIImageView = {
+    //
+    // MARK: - UI elements
+    //
+    private lazy var hatImage: UIImageView = {
         var image = UIImageView(frame: .zero)
         image.contentMode = .scaleAspectFit
         image.image = UIImage(named: "topHat")
@@ -20,28 +53,15 @@ class View: UIView {
         image.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hatImageTapped)))
         return image
     }()
-    lazy var activityLabel: UILabel = {
-        var label = UILabel(frame: .zero)
-        label.textColor = UIColor.white
-        label.numberOfLines = 0
-        return label
-    }()
-//    lazy var findButton: UIButton = {
-//        var button = UIButton(frame: .zero)
-//        button.setTitle("Search", for: .normal)
-//        button.setTitleColor(.white, for: .normal)
-//        button.backgroundColor = UIColor.orange
-//        button.addTarget(self, action: #selector(didTapSearch), for: .touchUpInside)
-//        return button
-//    }()
-    lazy var questionInput: UITextField = {
-        var textfield = UITextField(frame: .zero)
-        textfield.font = UIFont.boldSystemFont(ofSize: 28)
-        textfield.placeholder = "What's your question?"
-        textfield.textColor = UIColor.black
-        return textfield
+    //FIXME: A view pode ter uma referencia publica de cardView? Ou melhor deixar privado mesmo?
+    private lazy var cardView: CardView = {
+        var card = CardView(frame: .zero)
+        return card
     }()
     
+    //
+    // MARK: - Initializers
+    //
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -50,28 +70,31 @@ class View: UIView {
         super.init(coder: aDecoder)
         setup()
     }
-    func setup() {
-        backgroundColor = UIColor.purple
+    
+    //
+    // MARK: - Class methods
+    //
+    private func setup() {
+        backgroundColor = UIColor.primary
         addViews()
     }
     override func didMoveToSuperview() {
         setConstraints()
     }
-    func addViews() {
+    private func addViews() {
         addSubview(hatImage)
-        addSubview(activityLabel)
+        addSubview(cardView)
     }
-    func setConstraints() {
-        hatImage.anchor(top: safeAreaLayoutGuide.topAnchor, leading: safeAreaLayoutGuide.leadingAnchor, trailing: safeAreaLayoutGuide.trailingAnchor, padding: UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16))
+    private func setConstraints() {
+        hatImage.anchor(leading: safeAreaLayoutGuide.leadingAnchor, top: safeAreaLayoutGuide.topAnchor, trailing: safeAreaLayoutGuide.trailingAnchor, padding: UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16))
         hatImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.3).isActive = true
         
-        activityLabel.anchor(top: hatImage.bottomAnchor, leading: leadingAnchor, trailing: trailingAnchor, padding: UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16))
+        cardView.anchor(leading: leadingAnchor, top: hatImage.bottomAnchor, trailing: trailingAnchor, bottom: safeAreaLayoutGuide.bottomAnchor, padding: UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16))
     }
 
-    @objc func hatImageTapped() {
+    @objc private func hatImageTapped() {
         delegate?.didTapSearch()
     }
-    
 }
 
 protocol ViewDelegate: class {
