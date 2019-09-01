@@ -39,7 +39,11 @@ class CardView: UIView {
     }
     var participants: Int? {
         didSet {
-            participantsRowView.text = participants!.description+" Participants"
+            if participants == 1 {
+                participantsRowView.text = participants!.description+" participant"
+            } else {
+                participantsRowView.text = participants!.description+" participants"
+            }
         }
     }
     

@@ -11,8 +11,8 @@
 		E5220403231AA2DA0092C100 /* CardRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5220402231AA2DA0092C100 /* CardRowView.swift */; };
 		E5220406231AA3CC0092C100 /* UIFonts+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5220405231AA3CC0092C100 /* UIFonts+Custom.swift */; };
 		E5220408231AAF680092C100 /* UIColor+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5220407231AAF680092C100 /* UIColor+Custom.swift */; };
+		E5266AF4231C016D00B4AD3F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5266AF3231C016D00B4AD3F /* ViewController.swift */; };
 		E5D3CDBA23193B7D006A03A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D3CDB923193B7D006A03A9 /* AppDelegate.swift */; };
-		E5D3CDBC23193B7D006A03A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D3CDBB23193B7D006A03A9 /* ViewController.swift */; };
 		E5D3CDC223193B7D006A03A9 /* TedioffMVC.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E5D3CDC023193B7D006A03A9 /* TedioffMVC.xcdatamodeld */; };
 		E5D3CDC423193B81006A03A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5D3CDC323193B81006A03A9 /* Assets.xcassets */; };
 		E5D3CDC723193B81006A03A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5D3CDC523193B81006A03A9 /* LaunchScreen.storyboard */; };
@@ -48,9 +48,9 @@
 		E5220402231AA2DA0092C100 /* CardRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRowView.swift; sourceTree = "<group>"; };
 		E5220405231AA3CC0092C100 /* UIFonts+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFonts+Custom.swift"; sourceTree = "<group>"; };
 		E5220407231AAF680092C100 /* UIColor+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Custom.swift"; sourceTree = "<group>"; };
+		E5266AF3231C016D00B4AD3F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E5D3CDB623193B7D006A03A9 /* TedioffMVC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TedioffMVC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5D3CDB923193B7D006A03A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E5D3CDBB23193B7D006A03A9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E5D3CDC123193B7D006A03A9 /* TedioffMVC.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TedioffMVC.xcdatamodel; sourceTree = "<group>"; };
 		E5D3CDC323193B81006A03A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E5D3CDC623193B81006A03A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -181,7 +181,7 @@
 		E5D3CDEC23193E42006A03A9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E5D3CDBB23193B7D006A03A9 /* ViewController.swift */,
+				E5266AF3231C016D00B4AD3F /* ViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -332,8 +332,8 @@
 				E5D3CDF923198996006A03A9 /* UIView+Constraints.swift in Sources */,
 				E5220401231AA25F0092C100 /* CardView.swift in Sources */,
 				E5220408231AAF680092C100 /* UIColor+Custom.swift in Sources */,
-				E5D3CDBC23193B7D006A03A9 /* ViewController.swift in Sources */,
 				E5D3CDC223193B7D006A03A9 /* TedioffMVC.xcdatamodeld in Sources */,
+				E5266AF4231C016D00B4AD3F /* ViewController.swift in Sources */,
 				E5220403231AA2DA0092C100 /* CardRowView.swift in Sources */,
 				E5D3CDEF23193EF9006A03A9 /* Activity.swift in Sources */,
 				E5D3CDF32319401E006A03A9 /* ActivityType.swift in Sources */,

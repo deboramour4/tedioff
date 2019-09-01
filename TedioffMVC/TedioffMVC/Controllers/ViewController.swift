@@ -24,12 +24,13 @@ class ViewController: UIViewController {
             }
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         mainView.delegate = self
         self.view = mainView
+        self.title = "MVC"
     }
 }
 
