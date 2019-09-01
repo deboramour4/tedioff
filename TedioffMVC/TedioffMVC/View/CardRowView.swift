@@ -68,13 +68,13 @@ class CardRowView: UIView {
         addViews()
     }
     override func didMoveToSuperview() {
-        setConstraints()
+        autoLayout()
     }
     private func addViews() {
         addSubview(imageView)
         addSubview(label)
     }
-    private func setConstraints() {
+    private func autoLayout() {
         imageView.anchor(leading: leadingAnchor, top: topAnchor, bottom: bottomAnchor, padding: UIEdgeInsets(top: 0, left: 32, bottom: 0, right: 0))
         imageView.widthAnchor.constraint(equalToConstant: 50).isActive = true
         
@@ -86,7 +86,7 @@ class CardRowView: UIView {
         if isPrice != nil {
             let value = Int(text) ?? 0
             
-            let priceString = NSMutableAttributedString(string: "$$$$$", attributes: [NSAttributedString.Key.font: UIFont.primary])
+            let priceString = NSMutableAttributedString(string: "$$$$$", attributes: [NSAttributedString.Key.font: UIFont.primary ?? UIFont.systemFont(ofSize: 18)])
             priceString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.accent, range: NSRange(location: 0,length: value+1))
             label.attributedText = priceString
         } else {

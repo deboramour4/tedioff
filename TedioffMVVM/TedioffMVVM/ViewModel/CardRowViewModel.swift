@@ -8,17 +8,27 @@
 
 import UIKit
 
-public class CardRowViewModel {
-    
-    private let activityData: (UIImage?,String)
-    
+//
+// MARK: - CardRowViewModel
+// FIXME: Isso aqui seria melhor com generics
+struct CardRowViewModel {
+    //
+    // MARK: - Variables
+    //
+    private let activityData: (UIImage?, String)
     private let isPrice: Bool
     
-    init(activity data: (UIImage?,String), isPrice: Bool) {
+    //
+    // MARK: - Initializers
+    //
+    init(activity data: (UIImage?, String), isPrice: Bool) {
         self.activityData = data
         self.isPrice = isPrice
     }
     
+    //
+    // MARK: - Computed properties
+    //
     public var image: UIImage {
         return activityData.0 ?? UIImage(named: "like")!
     }
@@ -27,7 +37,7 @@ public class CardRowViewModel {
         if isPrice {
             let value = Int(activityData.1) ?? 0
             
-            let priceString = NSMutableAttributedString(string: "$$$$$", attributes: [NSAttributedString.Key.font: UIFont.primary!])
+            let priceString = NSMutableAttributedString(string: "$$$$$", attributes: [NSAttributedString.Key.font: UIFont.primary ?? UIFont.systemFont(ofSize: 18)])
             
             priceString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.accent, range: NSRange(location: 0,length: value+1))
             
@@ -35,10 +45,5 @@ public class CardRowViewModel {
         } else {
             return NSMutableAttributedString(string: activityData.1)
         }
-    }
-
-    func configure(_ view: CardRowView) {
-        view.imageView.image = image
-        view.label.attributedText = text
     }
 }

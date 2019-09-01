@@ -8,18 +8,9 @@
 
 import UIKit
 
+//
+// MARK: - MainViewModel
+//
 public class MainViewModel {
-    
-    private let activity: Activity
-    
-    private var cardViewModel: CardViewModel
-    
-    init(activity: Activity) {
-        self.activity = activity
-        self.cardViewModel = CardViewModel(activity: activity)
-    }
-    
-    func configure(_ view: View) {
-        view.cardView.viewModel = cardViewModel
-    }
+  
 }

@@ -11,16 +11,7 @@ import UIKit
 //
 // MARK: - CardRowView
 //
-class CardRowView: UIView {
-    //
-    // MARK: - Variables
-    //
-    var viewModel: CardRowViewModel! {
-        didSet {
-            self.viewModel.configure(self)
-        }
-    }
-    
+class CardRowView: UIView {    
     //
     // MARK: - UI elements
     //
@@ -39,7 +30,7 @@ class CardRowView: UIView {
     
     //
     // MARK: - Initializers
-    // FIXME: A melhor forma de receber os dados é no init? Ou setando cada valor na variável? - label.font
+    //
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -57,16 +48,20 @@ class CardRowView: UIView {
         addViews()
     }
     override func didMoveToSuperview() {
-        setConstraints()
+        autoLayout()
     }
     private func addViews() {
         addSubview(imageView)
         addSubview(label)
     }
-    private func setConstraints() {
+    private func autoLayout() {
         imageView.anchor(leading: leadingAnchor, top: topAnchor, bottom: bottomAnchor, padding: UIEdgeInsets(top: 0, left: 32, bottom: 0, right: 0))
         imageView.widthAnchor.constraint(equalToConstant: 50).isActive = true
         
         label.anchor(leading: imageView.trailingAnchor, top: topAnchor, trailing: trailingAnchor, bottom: bottomAnchor, padding: UIEdgeInsets(top: 0, left: 32, bottom: 0, right: 0))
+    }
+    func setValues(_ image: UIImage?, _ text: NSMutableAttributedString?) {
+        self.imageView.image = image
+        self.label.attributedText = text
     }
 }

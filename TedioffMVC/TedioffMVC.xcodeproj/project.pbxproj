@@ -18,12 +18,12 @@
 		E5D3CDC723193B81006A03A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5D3CDC523193B81006A03A9 /* LaunchScreen.storyboard */; };
 		E5D3CDD223193B81006A03A9 /* TedioffMVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D3CDD123193B81006A03A9 /* TedioffMVCTests.swift */; };
 		E5D3CDDD23193B81006A03A9 /* TedioffMVCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D3CDDC23193B81006A03A9 /* TedioffMVCUITests.swift */; };
-		E5D3CDEF23193EF9006A03A9 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D3CDEE23193EF9006A03A9 /* Activity.swift */; };
-		E5D3CDF123193F09006A03A9 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D3CDF023193F09006A03A9 /* Network.swift */; };
-		E5D3CDF32319401E006A03A9 /* ActivityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D3CDF22319401E006A03A9 /* ActivityType.swift */; };
-		E5D3CDF523194293006A03A9 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D3CDF423194293006A03A9 /* NetworkError.swift */; };
 		E5D3CDF723198042006A03A9 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D3CDF623198042006A03A9 /* View.swift */; };
-		E5D3CDF923198996006A03A9 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D3CDF823198996006A03A9 /* UIView+Constraints.swift */; };
+		E5F5F9B9231C613E0094283D /* ActivityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F5F9B5231C613E0094283D /* ActivityType.swift */; };
+		E5F5F9BA231C613E0094283D /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F5F9B6231C613E0094283D /* Network.swift */; };
+		E5F5F9BB231C613E0094283D /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F5F9B7231C613E0094283D /* NetworkError.swift */; };
+		E5F5F9BC231C613E0094283D /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F5F9B8231C613E0094283D /* Activity.swift */; };
+		E5F5F9C6231C61E00094283D /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F5F9C5231C61DF0094283D /* UIView+Constraints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,12 +61,12 @@
 		E5D3CDD823193B81006A03A9 /* TedioffMVCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TedioffMVCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5D3CDDC23193B81006A03A9 /* TedioffMVCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TedioffMVCUITests.swift; sourceTree = "<group>"; };
 		E5D3CDDE23193B81006A03A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E5D3CDEE23193EF9006A03A9 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
-		E5D3CDF023193F09006A03A9 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
-		E5D3CDF22319401E006A03A9 /* ActivityType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityType.swift; sourceTree = "<group>"; };
-		E5D3CDF423194293006A03A9 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		E5D3CDF623198042006A03A9 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
-		E5D3CDF823198996006A03A9 /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+Constraints.swift"; path = "../UIView+Constraints.swift"; sourceTree = "<group>"; };
+		E5F5F9B5231C613E0094283D /* ActivityType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityType.swift; sourceTree = "<group>"; };
+		E5F5F9B6231C613E0094283D /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		E5F5F9B7231C613E0094283D /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		E5F5F9B8231C613E0094283D /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		E5F5F9C5231C61DF0094283D /* UIView+Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +97,8 @@
 		E5220404231AA2E10092C100 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				E5D3CDF823198996006A03A9 /* UIView+Constraints.swift */,
 				E5220405231AA3CC0092C100 /* UIFonts+Custom.swift */,
+				E5F5F9C5231C61DF0094283D /* UIView+Constraints.swift */,
 				E5220407231AAF680092C100 /* UIColor+Custom.swift */,
 			);
 			path = Extensions;
@@ -127,12 +127,12 @@
 		E5D3CDB823193B7D006A03A9 /* TedioffMVC */ = {
 			isa = PBXGroup;
 			children = (
-				E5D3CDEA23193E35006A03A9 /* Model */,
-				E5D3CDEB23193E39006A03A9 /* View */,
-				E5D3CDEC23193E42006A03A9 /* Controllers */,
-				E5D3CDED23193E52006A03A9 /* Resources */,
-				E5D3CDB923193B7D006A03A9 /* AppDelegate.swift */,
 				E5D3CDC823193B81006A03A9 /* Info.plist */,
+				E5D3CDB923193B7D006A03A9 /* AppDelegate.swift */,
+				E5D3CDEC23193E42006A03A9 /* Controllers */,
+				E5D3CDEA23193E35006A03A9 /* Model */,
+				E5D3CDED23193E52006A03A9 /* Resources */,
+				E5D3CDEB23193E39006A03A9 /* View */,
 			);
 			path = TedioffMVC;
 			sourceTree = "<group>";
@@ -159,10 +159,10 @@
 			isa = PBXGroup;
 			children = (
 				E5D3CDC023193B7D006A03A9 /* TedioffMVC.xcdatamodeld */,
-				E5D3CDEE23193EF9006A03A9 /* Activity.swift */,
-				E5D3CDF22319401E006A03A9 /* ActivityType.swift */,
-				E5D3CDF023193F09006A03A9 /* Network.swift */,
-				E5D3CDF423194293006A03A9 /* NetworkError.swift */,
+				E5F5F9B8231C613E0094283D /* Activity.swift */,
+				E5F5F9B5231C613E0094283D /* ActivityType.swift */,
+				E5F5F9B6231C613E0094283D /* Network.swift */,
+				E5F5F9B7231C613E0094283D /* NetworkError.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -327,16 +327,16 @@
 			files = (
 				E5D3CDF723198042006A03A9 /* View.swift in Sources */,
 				E5220406231AA3CC0092C100 /* UIFonts+Custom.swift in Sources */,
-				E5D3CDF123193F09006A03A9 /* Network.swift in Sources */,
-				E5D3CDF523194293006A03A9 /* NetworkError.swift in Sources */,
-				E5D3CDF923198996006A03A9 /* UIView+Constraints.swift in Sources */,
 				E5220401231AA25F0092C100 /* CardView.swift in Sources */,
+				E5F5F9C6231C61E00094283D /* UIView+Constraints.swift in Sources */,
 				E5220408231AAF680092C100 /* UIColor+Custom.swift in Sources */,
+				E5F5F9BA231C613E0094283D /* Network.swift in Sources */,
 				E5D3CDC223193B7D006A03A9 /* TedioffMVC.xcdatamodeld in Sources */,
+				E5F5F9B9231C613E0094283D /* ActivityType.swift in Sources */,
 				E5266AF4231C016D00B4AD3F /* ViewController.swift in Sources */,
+				E5F5F9BB231C613E0094283D /* NetworkError.swift in Sources */,
 				E5220403231AA2DA0092C100 /* CardRowView.swift in Sources */,
-				E5D3CDEF23193EF9006A03A9 /* Activity.swift in Sources */,
-				E5D3CDF32319401E006A03A9 /* ActivityType.swift in Sources */,
+				E5F5F9BC231C613E0094283D /* Activity.swift in Sources */,
 				E5D3CDBA23193B7D006A03A9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

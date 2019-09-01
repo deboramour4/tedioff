@@ -36,8 +36,13 @@ class ViewController: UIViewController {
 
 extension ViewController: ViewDelegate {
     func didTapSearch() {
+        mainView.startLoading()
         Network.shared.requestJSON { (error, activity) in
             self.activity = activity
+            
+            DispatchQueue.main.async {
+                self.mainView.stopLoading()
+            }
         }
     }
 }

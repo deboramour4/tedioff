@@ -7,16 +7,40 @@
 //
 
 import UIKit
-
+//
+// MARK: - CardViewModel
+//
 public class CardViewModel {
+    //
+    // MARK: - Variables
+    //
+    private let apiService: Network
     
-    private let activity: Activity
+    var cardRowViewModels: [CardRowViewModel] = [CardRowViewModel]()
     
-    private var cardRowViewModels: [CardRowViewModel] = []
+    private var activity: Activity = Activity() {
+        didSet {
+            createRowViewModels()
+            self.updateActivity?()
+        }
+    }
     
-    init(activity: Activity) {
-        self.activity = activity
-        
+    //
+    // MARK: - Closures
+    //
+    var updateActivity: (()->())?
+    var updateLoadingStatus: (()->())?
+    
+    //
+    // MARK: - Initializers
+    //
+    init(api: Network) {
+        self.apiService = api
+        self.isLoading = false
+        self.createRowViewModels()
+    }
+    
+    func createRowViewModels() {
         self.cardRowViewModels = [
             CardRowViewModel(activity: (UIImage(named: "tag"), type), isPrice: false),
             CardRowViewModel(activity: (UIImage(named: "like"), accessibility), isPrice: false),
@@ -25,33 +49,46 @@ public class CardViewModel {
         ]
     }
     
-    private var title: String {
+    //
+    // MARK: - Computed properties
+    //
+    // FIXME: isso é publico msm?
+    var title: String {
         return activity.activity
     }
-    private var type: String {
+    var type: String {
         return activity.type.rawValue.capitalized
     }
-    private var accessibility: String {
+    var accessibility: String {
         return activity.accessibility.description
     }
-    private var price: String {
+    var price: String {
         let priceValue = Int(activity.price * 4)
         return priceValue.description
     }
-    private var participants: String {
+    var participants: String {
         if activity.participants == 1 {
-            return activity.participants.description+" participant"
+            return activity.participants.description + " participant"
         } else {
-            return activity.participants.description+" participants"
+            return activity.participants.description + " participants"
+        }
+    }
+    var isLoading: Bool = false {
+        didSet {
+            self.updateLoadingStatus?()
         }
     }
     
-    func configure(_ view: CardView) {
-        view.titleLabel.text = activity.activity
-        
-        view.typeRowView.viewModel = cardRowViewModels[0]
-        view.accessibilityRowView.viewModel = cardRowViewModels[1]
-        view.priceRowView.viewModel = cardRowViewModels[2]
-        view.participantsRowView.viewModel = cardRowViewModels[3]
+    //
+    // MARK: - Class methods
+    //
+    func fetchNewActivity() {
+        self.isLoading = true
+        apiService.requestJSON { [weak self] (error, activity) in
+            if let unwrapedActivity = activity {
+                self?.activity = unwrapedActivity
+            }
+            self?.isLoading = false
+        }
     }
 }

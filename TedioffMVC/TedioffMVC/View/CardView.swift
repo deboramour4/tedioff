@@ -104,7 +104,7 @@ class CardView: UIView {
         addViews()
     }
     override func didMoveToSuperview() {
-        setConstraints()
+        autoLayout()
     }
     private func addViews() {
         addSubview(titleLabel)
@@ -113,7 +113,7 @@ class CardView: UIView {
         addSubview(priceRowView)
         addSubview(participantsRowView)
     }
-    private func setConstraints() {
+    private func autoLayout() {
         titleLabel.anchor(leading: leadingAnchor, top: topAnchor, trailing: trailingAnchor, padding: UIEdgeInsets(top: 32, left: 16, bottom: 0, right: 16))
         
         typeRowView.anchor(leading: leadingAnchor, top: titleLabel.bottomAnchor, trailing: trailingAnchor, padding: UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 0))
