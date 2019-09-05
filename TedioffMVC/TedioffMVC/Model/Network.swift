@@ -7,29 +7,26 @@
 //
 
 import Foundation
-//
+
 // MARK: - Network
-//
+
 class Network: NSObject {
     
-    //
     // MARK: - Variables
-    //
-    static var shared = Network(api: URL(string: "https://www.boredapi.com/api/activity/"))
     
+    typealias NetworkHandler<T> = ((NetworkError?, T?) -> Void)
+    static var shared = Network(api: URL(string: "https://www.boredapi.com/api/activity/"))
     var apiUrl: URL?
     
-    //
     // MARK: - Initializers
-    //
-    private init(api: URL?) {
+    
+    private init(api: URL? = URL(string: "https://www.boredapi.com/api/activity/")) {
         self.apiUrl = api
     }
     
-    //
     // MARK: - Class Methods
-    //
-    func requestJSON(completion: @escaping (NetworkError?, Activity?) -> Void) {
+    
+    func requestJSON<T: Decodable>(type: T.Type, completion: @escaping NetworkHandler<T>) {
         guard let url = apiUrl else { completion(.invalidURL, nil); return }
         
         let request = URLRequest(url: url)
@@ -40,16 +37,15 @@ class Network: NSObject {
             if statusCode != 200 {
                 completion(.requestError ,nil)
             }
-        
+            
             guard let data = data else { return }
             do {
                 let decoder = JSONDecoder()
-                let activity = try decoder.decode(Activity.self, from: data)
-                completion(nil, activity)
+                let parsedData = try decoder.decode(type, from: data)
+                completion(nil, parsedData)
             } catch {
                 completion(.parseError, nil)
             }
-        }.resume()
+            }.resume()
     }
-    
 }

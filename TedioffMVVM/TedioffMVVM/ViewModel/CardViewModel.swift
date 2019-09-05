@@ -11,6 +11,18 @@ import UIKit
 // MARK: - CardViewModel
 //
 public class CardViewModel {
+    
+    //
+    // MARK: - TypeAlias
+    //
+    typealias NotifyClosure = (()->())
+    
+    //
+    // MARK: - Closures
+    //
+    var updateActivity: NotifyClosure?
+    var updateLoadingStatus: NotifyClosure?
+    
     //
     // MARK: - Variables
     //
@@ -18,18 +30,12 @@ public class CardViewModel {
     
     var cardRowViewModels: [CardRowViewModel] = [CardRowViewModel]()
     
-    private var activity: Activity = Activity() {
+    private var activity = Activity.mocked {
         didSet {
             createRowViewModels()
             self.updateActivity?()
         }
     }
-    
-    //
-    // MARK: - Closures
-    //
-    var updateActivity: (()->())?
-    var updateLoadingStatus: (()->())?
     
     //
     // MARK: - Initializers
@@ -42,41 +48,60 @@ public class CardViewModel {
     
     func createRowViewModels() {
         self.cardRowViewModels = [
-            CardRowViewModel(activity: (UIImage(named: "tag"), type), isPrice: false),
-            CardRowViewModel(activity: (UIImage(named: "like"), accessibility), isPrice: false),
-            CardRowViewModel(activity: (UIImage(named: "money"), price), isPrice: true),
-            CardRowViewModel(activity: (UIImage(named: "people"), participants), isPrice: false)
+            CardRowViewModel(activity: ("type", type)),
+            CardRowViewModel(activity: ("accessibility", accessibility)),
+            CardRowViewModel(activity: ("price", price)),
+            CardRowViewModel(activity: ("participants", participants))
         ]
     }
     
     //
     // MARK: - Computed properties
     //
-    // FIXME: isso é publico msm?
-    var title: String {
+    private var title: String {
         return activity.activity
     }
-    var type: String {
+    private var type: String {
         return activity.type.rawValue.capitalized
     }
-    var accessibility: String {
+    private var accessibility: String {
         return activity.accessibility.description
     }
-    var price: String {
+    private var price: String {
         let priceValue = Int(activity.price * 4)
         return priceValue.description
     }
-    var participants: String {
+    private var participants: String {
         if activity.participants == 1 {
             return activity.participants.description + " participant"
         } else {
             return activity.participants.description + " participants"
         }
     }
+    // FIXME: Esse pode ser público?
     var isLoading: Bool = false {
         didSet {
             self.updateLoadingStatus?()
         }
+    }
+    
+    func getViewModel(for type: String) -> CardRowViewModel? {
+        let cardRowViewModel = cardRowViewModels.filter { (viewModel) -> Bool in
+            if viewModel.type == type {
+                return true
+            }
+            return false
+        }
+        
+        return cardRowViewModel.first
+    }
+    
+    func configure(_ view: CardView?) {
+        view?.setViewValues(title: title,
+                           type: (cardRowViewModels[0].image, cardRowViewModels[0].text),
+                           accessibility: (cardRowViewModels[1].image, cardRowViewModels[1].text),
+                           price: (cardRowViewModels[2].image, cardRowViewModels[2].text),
+                           participants: (cardRowViewModels[3].image, cardRowViewModels[3].text))
     }
     
     //
@@ -84,11 +109,11 @@ public class CardViewModel {
     //
     func fetchNewActivity() {
         self.isLoading = true
-        apiService.requestJSON { [weak self] (error, activity) in
+        apiService.requestJSON(type: Activity.self, completion: {[weak self] (error, activity) in
             if let unwrapedActivity = activity {
                 self?.activity = unwrapedActivity
             }
             self?.isLoading = false
-        }
+        })
     }
 }

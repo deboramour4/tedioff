@@ -7,13 +7,13 @@
 //
 
 import Foundation
-//
+
 // MARK: - Network Error
-//
+
 enum NetworkError: Error {
-    //
+    
     // MARK: - Cases
-    //
+    
     case invalidURL
     case parseError
     case requestError

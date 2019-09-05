@@ -8,24 +8,16 @@
 
 import UIKit
 
-//
 // MARK: - CardRowView
-//
+
 class CardRowView: UIView {
-    //
+    
     // MARK: - Variables
-    //
-    var image: UIImage?
-    var text: String? {
-        didSet {
-            setLabelText()
-        }
-    }
+    
     var isPrice: Bool?
     
-    //
     // MARK: - UI elements
-    //
+    
     private lazy var imageView: UIImageView = {
         var image = UIImageView(frame: .zero)
         image.contentMode = .scaleAspectFit
@@ -39,14 +31,8 @@ class CardRowView: UIView {
         return label
     }()
     
-    //
     // MARK: - Initializers
-    // FIXME: A melhor forma de receber os dados é no init? Ou setando cada valor na variável? - label.font
-    init(frame: CGRect, image: UIImage?) {
-        super.init(frame: frame)
-        self.image = image
-        setup()
-    }
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -56,15 +42,10 @@ class CardRowView: UIView {
         setup()
     }
     
-    //
     // MARK: - Class methods
-    //
+    
     private func setup() {
         backgroundColor = UIColor.clear
-        
-        // FIXME: Qual é a melhor forma de setar esses dados? Aqui? didSet?
-        imageView.image = image
-        
         addViews()
     }
     override func didMoveToSuperview() {
@@ -80,7 +61,10 @@ class CardRowView: UIView {
         
         label.anchor(leading: imageView.trailingAnchor, top: topAnchor, trailing: trailingAnchor, bottom: bottomAnchor, padding: UIEdgeInsets(top: 0, left: 32, bottom: 0, right: 0))
     }
-    private func setLabelText(){
+    func setImage(_ image: UIImage?) {
+        self.imageView.image = image
+    }
+    func setText(_ text: String?) {
         guard let text = text else { return }
         
         if isPrice != nil {
@@ -92,6 +76,10 @@ class CardRowView: UIView {
         } else {
             self.label.text = text.capitalized
         }
+    }
+    func setValues(_ image: UIImage?, _ text: String?) {
+        self.setImage(image)
+        self.setText(text)
     }
    
 }

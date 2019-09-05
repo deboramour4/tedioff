@@ -15,26 +15,26 @@ struct CardRowViewModel {
     //
     // MARK: - Variables
     //
-    private let activityData: (UIImage?, String)
-    private let isPrice: Bool
+    private let activityData: (String, String)
+    let type: String
     
     //
     // MARK: - Initializers
     //
-    init(activity data: (UIImage?, String), isPrice: Bool) {
+    init(activity data: (String, String)) {
         self.activityData = data
-        self.isPrice = isPrice
+        self.type = data.0
     }
     
     //
     // MARK: - Computed properties
     //
     public var image: UIImage {
-        return activityData.0 ?? UIImage(named: "like")!
+        return UIImage(named: activityData.0) ?? UIImage(named: "like")!
     }
     
     public var text: NSMutableAttributedString {
-        if isPrice {
+        if type == "price" {
             let value = Int(activityData.1) ?? 0
             
             let priceString = NSMutableAttributedString(string: "$$$$$", attributes: [NSAttributedString.Key.font: UIFont.primary ?? UIFont.systemFont(ofSize: 18)])

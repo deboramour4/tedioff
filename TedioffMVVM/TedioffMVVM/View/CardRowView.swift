@@ -8,19 +8,18 @@
 
 import UIKit
 
-//
 // MARK: - CardRowView
-//
+
 class CardRowView: UIView {    
-    //
+    
     // MARK: - UI elements
-    //
-    lazy var imageView: UIImageView = {
+    
+    private lazy var imageView: UIImageView = {
         var image = UIImageView(frame: .zero)
         image.contentMode = .scaleAspectFit
         return image
     }()
-    lazy var label: UILabel = {
+    private lazy var label: UILabel = {
         var label = UILabel(frame: .zero)
         label.textColor = UIColor.black
         label.font = UIFont.primary
@@ -28,9 +27,8 @@ class CardRowView: UIView {
         return label
     }()
     
-    //
     // MARK: - Initializers
-    //
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -40,9 +38,8 @@ class CardRowView: UIView {
         setup()
     }
     
-    //
     // MARK: - Class methods
-    //
+
     private func setup() {
         backgroundColor = UIColor.clear
         addViews()
@@ -60,8 +57,14 @@ class CardRowView: UIView {
         
         label.anchor(leading: imageView.trailingAnchor, top: topAnchor, trailing: trailingAnchor, bottom: bottomAnchor, padding: UIEdgeInsets(top: 0, left: 32, bottom: 0, right: 0))
     }
-    func setValues(_ image: UIImage?, _ text: NSMutableAttributedString?) {
+    func setImage(_ image: UIImage?) {
         self.imageView.image = image
+    }
+    func setText(_ text: NSMutableAttributedString?) {
         self.label.attributedText = text
+    }
+    func setValues(_ image: UIImage?, _ text: NSMutableAttributedString?) {
+        self.setImage(image)
+        self.setText(text)
     }
 }

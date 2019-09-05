@@ -8,13 +8,12 @@
 
 import Foundation
 
-//
 // MARK: - ActivityType
-//
+
 enum ActivityType: String, Decodable {
-    //
+    
     // MARK: - Cases
-    //
+    
     case education
     case recreational
     case social

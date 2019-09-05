@@ -8,13 +8,12 @@
 
 import Foundation
 
-//
 // MARK: - Activity
-//
+
 class Activity: Decodable {
-    //
+    
     // MARK: Variables and Properties
-    //
+    
     var activity: String
     var accessibility: Float
     var type: ActivityType
@@ -33,12 +32,12 @@ class Activity: Decodable {
         Key: \(key)
         """
     }
-
-    //
+    
+    static var mocked = Activity(activity: "", accessibility: 0.0, type: .busywork, participants: 0, price: 0.0, link: nil, key: "")
+    
     // MARK: - Initialization
-    //
-    // FIXME: de boas mockar assim?
-    init(activity: String = "", accessibility: Float = 0.0, type: ActivityType = ActivityType.busywork, participants: Int = 0, price: Float = 0.0, link: String? = "", key: String = "") {
+    
+    init(activity: String, accessibility: Float, type: ActivityType, participants: Int, price: Float, link: String?, key: String) {
         self.activity = activity
         self.accessibility = accessibility
         self.type = type

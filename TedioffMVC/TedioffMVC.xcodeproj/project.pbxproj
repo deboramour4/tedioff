@@ -18,7 +18,7 @@
 		E5D3CDC723193B81006A03A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5D3CDC523193B81006A03A9 /* LaunchScreen.storyboard */; };
 		E5D3CDD223193B81006A03A9 /* TedioffMVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D3CDD123193B81006A03A9 /* TedioffMVCTests.swift */; };
 		E5D3CDDD23193B81006A03A9 /* TedioffMVCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D3CDDC23193B81006A03A9 /* TedioffMVCUITests.swift */; };
-		E5D3CDF723198042006A03A9 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D3CDF623198042006A03A9 /* View.swift */; };
+		E5D3CDF723198042006A03A9 /* GetActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D3CDF623198042006A03A9 /* GetActivityView.swift */; };
 		E5F5F9B9231C613E0094283D /* ActivityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F5F9B5231C613E0094283D /* ActivityType.swift */; };
 		E5F5F9BA231C613E0094283D /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F5F9B6231C613E0094283D /* Network.swift */; };
 		E5F5F9BB231C613E0094283D /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F5F9B7231C613E0094283D /* NetworkError.swift */; };
@@ -61,7 +61,7 @@
 		E5D3CDD823193B81006A03A9 /* TedioffMVCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TedioffMVCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5D3CDDC23193B81006A03A9 /* TedioffMVCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TedioffMVCUITests.swift; sourceTree = "<group>"; };
 		E5D3CDDE23193B81006A03A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E5D3CDF623198042006A03A9 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		E5D3CDF623198042006A03A9 /* GetActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetActivityView.swift; sourceTree = "<group>"; };
 		E5F5F9B5231C613E0094283D /* ActivityType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityType.swift; sourceTree = "<group>"; };
 		E5F5F9B6231C613E0094283D /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		E5F5F9B7231C613E0094283D /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -171,7 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				E5220404231AA2E10092C100 /* Extensions */,
-				E5D3CDF623198042006A03A9 /* View.swift */,
+				E5D3CDF623198042006A03A9 /* GetActivityView.swift */,
 				E5220400231AA25F0092C100 /* CardView.swift */,
 				E5220402231AA2DA0092C100 /* CardRowView.swift */,
 			);
@@ -325,7 +325,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5D3CDF723198042006A03A9 /* View.swift in Sources */,
+				E5D3CDF723198042006A03A9 /* GetActivityView.swift in Sources */,
 				E5220406231AA3CC0092C100 /* UIFonts+Custom.swift in Sources */,
 				E5220401231AA25F0092C100 /* CardView.swift in Sources */,
 				E5F5F9C6231C61E00094283D /* UIView+Constraints.swift in Sources */,

@@ -8,19 +8,16 @@
 
 import UIKit
 
+// MARK: - ViewController
+
 class ViewController: UIViewController {
     
-    let mainView = View()
+    let mainView = GetActivityView()
     
     var activity: Activity? {
         didSet {
             DispatchQueue.main.sync {
-                self.mainView.activityTitle = activity?.activity
-                self.mainView.activityType = activity?.type.rawValue
-                self.mainView.activityAccessibility = activity?.accessibility
-                self.mainView.activityPrice = activity?.price
-                self.mainView.activityParticipants = activity?.participants
-                
+                self.mainView.setViewValues(with: activity)
             }
         }
     }
@@ -34,16 +31,18 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: ViewDelegate {
+// MARK: - ViewDelegate
+
+extension ViewController: GetActivityViewDelegate {
     func didTapSearch() {
         mainView.startLoading()
-        Network.shared.requestJSON { (error, activity) in
-            self.activity = activity
+        Network.shared.requestJSON(type: Activity.self, completion: {[weak self] (error, activity) in
+            self?.activity = activity
             
             DispatchQueue.main.async {
-                self.mainView.stopLoading()
+                self?.mainView.stopLoading()
             }
-        }
+        })
     }
 }
 

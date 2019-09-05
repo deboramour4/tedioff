@@ -8,15 +8,18 @@
 
 import UIKit
 
+// MARK: - ViewController
+
 class ViewController: UIViewController {
+    
+    // MARK: - ViewModels
 
     var viewModel: MainViewModel = MainViewModel()
     
-    // FIXME: Faz sentido a minha controller ter mais de um VM?
     var cardViewModel: CardViewModel = CardViewModel(api: Network.shared)
     
-    lazy var mainView: View = {
-        let view = View(frame: .zero)
+    lazy var mainView: GetActivityView = {
+        let view = GetActivityView(frame: .zero)
         view.delegate = self
         return view
     }()
@@ -26,41 +29,34 @@ class ViewController: UIViewController {
         
         self.view = mainView
         self.title = "MVVM"
-        
+                
         initVM()
     }
     
     func initVM() {
-        cardViewModel.updateLoadingStatus = {[weak self] () in
+        cardViewModel.updateLoadingStatus = { [weak self] in
             DispatchQueue.main.async {
                 let isLoading = self?.cardViewModel.isLoading ?? false
                 if isLoading {
                     self?.mainView.startLoading()
-                }else {
+                } else {
                     self?.mainView.stopLoading()
                 }
             }
         }
         
-        cardViewModel.updateActivity = { [weak self] () in
+        cardViewModel.updateActivity = { [weak self] in
             DispatchQueue.main.async {
-                
-                self?.mainView.cardView.titleLabel.text = self?.cardViewModel.title
-                
-                self?.mainView.cardView.typeRowView.setValues(self?.cardViewModel.cardRowViewModels[0].image, self?.cardViewModel.cardRowViewModels[0].text)
-                
-                self?.mainView.cardView.accessibilityRowView.setValues(self?.cardViewModel.cardRowViewModels[1].image, self?.cardViewModel.cardRowViewModels[1].text)
-                
-                self?.mainView.cardView.priceRowView.setValues(self?.cardViewModel.cardRowViewModels[2].image, self?.cardViewModel.cardRowViewModels[2].text)
-                
-                self?.mainView.cardView.participantsRowView.setValues(self?.cardViewModel.cardRowViewModels[3].image, self?.cardViewModel.cardRowViewModels[3 ].text)
+                self?.cardViewModel.configure(self?.mainView.getCardView())
             }
         }
     }
     
 }
 
-extension ViewController: ViewDelegate {
+// MARK: - ViewDelegate
+
+extension ViewController: GetActivityViewDelegate {
     func didTapSearch() {
         cardViewModel.fetchNewActivity()
     }

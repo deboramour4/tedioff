@@ -14,7 +14,7 @@
 		E5220431231BE7F80092C100 /* TedioffMVVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5220430231BE7F80092C100 /* TedioffMVVMTests.swift */; };
 		E522043C231BE7F80092C100 /* TedioffMVVMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E522043B231BE7F80092C100 /* TedioffMVVMUITests.swift */; };
 		E5220458231BE8E80092C100 /* CardRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5220455231BE8E80092C100 /* CardRowView.swift */; };
-		E5220459231BE8E80092C100 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5220456231BE8E80092C100 /* View.swift */; };
+		E5220459231BE8E80092C100 /* GetActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5220456231BE8E80092C100 /* GetActivityView.swift */; };
 		E522045A231BE8E80092C100 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5220457231BE8E80092C100 /* CardView.swift */; };
 		E5220466231BEA3E0092C100 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5220465231BEA3E0092C100 /* MainViewModel.swift */; };
 		E5220468231BEA4E0092C100 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5220467231BEA4E0092C100 /* CardViewModel.swift */; };
@@ -60,7 +60,7 @@
 		E522043B231BE7F80092C100 /* TedioffMVVMUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TedioffMVVMUITests.swift; sourceTree = "<group>"; };
 		E522043D231BE7F80092C100 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5220455231BE8E80092C100 /* CardRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardRowView.swift; sourceTree = "<group>"; };
-		E5220456231BE8E80092C100 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		E5220456231BE8E80092C100 /* GetActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetActivityView.swift; sourceTree = "<group>"; };
 		E5220457231BE8E80092C100 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		E5220465231BEA3E0092C100 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		E5220467231BEA4E0092C100 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
@@ -168,7 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				E5F5F9C7231C61F70094283D /* Extensions */,
-				E5220456231BE8E80092C100 /* View.swift */,
+				E5220456231BE8E80092C100 /* GetActivityView.swift */,
 				E5220457231BE8E80092C100 /* CardView.swift */,
 				E5220455231BE8E80092C100 /* CardRowView.swift */,
 			);
@@ -351,7 +351,7 @@
 				E5F5F9C4231C61710094283D /* Activity.swift in Sources */,
 				E522045A231BE8E80092C100 /* CardView.swift in Sources */,
 				E5220466231BEA3E0092C100 /* MainViewModel.swift in Sources */,
-				E5220459231BE8E80092C100 /* View.swift in Sources */,
+				E5220459231BE8E80092C100 /* GetActivityView.swift in Sources */,
 				E5220421231BE7F30092C100 /* TedioffMVVM.xcdatamodeld in Sources */,
 				E5220468231BEA4E0092C100 /* CardViewModel.swift in Sources */,
 				E5F5F9C1231C61710094283D /* ActivityType.swift in Sources */,
