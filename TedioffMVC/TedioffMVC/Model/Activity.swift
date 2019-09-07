@@ -12,7 +12,24 @@ import Foundation
 
 class Activity: Decodable {
     
-    // MARK: Variables and Properties
+    // MARK: - ActivityType
+    
+    enum ActivityType: String, Decodable {
+        
+        // MARK: - Cases
+        
+        case education
+        case recreational
+        case social
+        case diy
+        case charity
+        case cooking
+        case relaxation
+        case music
+        case busywork
+    }
+    
+    // MARK - Properties
     
     var activity: String
     var accessibility: Float
@@ -21,19 +38,6 @@ class Activity: Decodable {
     var price: Float
     var link: String?
     var key: String
-    
-    var description: String {
-        return """
-        Name: \(activity)
-        Accessibility: \(accessibility)
-        Type: \(type)
-        Participants: \(participants)
-        Price: \(price)
-        Key: \(key)
-        """
-    }
-    
-    static var mocked = Activity(activity: "", accessibility: 0.0, type: .busywork, participants: 0, price: 0.0, link: nil, key: "")
     
     // MARK: - Initialization
     
@@ -46,5 +50,4 @@ class Activity: Decodable {
         self.link = link
         self.key = key
     }
-    
 }

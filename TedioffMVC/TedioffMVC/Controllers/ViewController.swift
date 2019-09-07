@@ -13,12 +13,11 @@ import UIKit
 class ViewController: UIViewController {
     
     let mainView = GetActivityView()
+    let activityManager = ActivityManager()
     
     var activity: Activity? {
         didSet {
-            DispatchQueue.main.sync {
-                self.mainView.setViewValues(with: activity)
-            }
+            mainView.setViewValues(with: activity)
         }
     }
     
@@ -34,15 +33,18 @@ class ViewController: UIViewController {
 // MARK: - ViewDelegate
 
 extension ViewController: GetActivityViewDelegate {
-    func didTapSearch() {
+    func getNewActivity() {
         mainView.startLoading()
-        Network.shared.requestJSON(type: Activity.self, completion: {[weak self] (error, activity) in
-            self?.activity = activity
-            
+        activityManager.getActivity { [weak self] (activity) in
             DispatchQueue.main.async {
+                self?.activity = activity
                 self?.mainView.stopLoading()
             }
-        })
+        }
+    }
+    
+    func clearActivity() {
+        self.activity = nil
     }
 }
 

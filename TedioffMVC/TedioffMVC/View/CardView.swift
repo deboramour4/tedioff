@@ -22,25 +22,30 @@ class CardView: UIView {
         label.numberOfLines = 0
         return label
     }()
+    private lazy var emptyLabel: UILabel = {
+        var label = UILabel(frame: .zero)
+        label.textColor = UIColor.grayLighter
+        label.textAlignment = .center
+        label.font = UIFont.title
+        label.numberOfLines = 0
+        label.text = "Nothing to show"
+        return label
+    }()
     private lazy var typeRowView: CardRowView = {
         var row = CardRowView(frame: .zero)
-        row.setImage(UIImage(named: "tag"))
         return row
     }()
     private lazy var accessibilityRowView: CardRowView = {
         var row = CardRowView(frame: .zero)
-        row.setImage(UIImage(named: "like"))
         return row
     }()
     private lazy var priceRowView: CardRowView = {
         var row = CardRowView(frame: .zero)
-        row.setImage(UIImage(named: "money"))
         row.isPrice = true
         return row
     }()
     private lazy var participantsRowView: CardRowView = {
         var row = CardRowView(frame: .zero)
-        row.setImage(UIImage(named: "people"))
         return row
     }()
     
@@ -69,6 +74,7 @@ class CardView: UIView {
     }
     private func addViews() {
         addSubview(titleLabel)
+        addSubview(emptyLabel)
         addSubview(typeRowView)
         addSubview(accessibilityRowView)
         addSubview(priceRowView)
@@ -84,19 +90,31 @@ class CardView: UIView {
         priceRowView.anchor(leading: leadingAnchor, top: accessibilityRowView.bottomAnchor, trailing: trailingAnchor, padding: UIEdgeInsets(top: 32, left: 0, bottom: 0, right: 0))
         
         participantsRowView.anchor(leading: leadingAnchor, top: priceRowView.bottomAnchor, trailing: trailingAnchor, padding: UIEdgeInsets(top: 32, left: 0, bottom: 0, right: 0))
+        
+        emptyLabel.centralize(in: self)
     }
     func setViewValues(with activity: Activity?) {
         if let activity = activity {
-            self.titleLabel.text = activity.activity
-            self.typeRowView.setText(activity.type.rawValue)
-            self.accessibilityRowView.setText(activity.accessibility.description)
-            self.priceRowView.setText(Int(activity.price).description)
+            emptyLabel.isHidden = true
             
-            if Int(activity.participants) == 1 {
-                self.participantsRowView.setText(activity.participants.description + " participant")
-            } else {
-                self.participantsRowView.setText(activity.participants.description + " participants")
-            }
+            titleLabel.text = activity.activity
+            typeRowView.setValues(UIImage(named: "tag"), activity.type.rawValue)
+            accessibilityRowView.setValues(UIImage(named: "like"), activity.accessibility.description)
+            priceRowView.setValues(UIImage(named: "money"), Int(activity.price).description)
+
+            let participantsText = Int(activity.participants) == 1
+            ? activity.participants.description + " participant" :
+            activity.participants.description + " participants"
+            
+            participantsRowView.setValues(UIImage(named: "people"), participantsText)
+        } else {
+            emptyLabel.isHidden = false
+            
+            titleLabel.text = nil
+            typeRowView.setValues(nil,nil)
+            accessibilityRowView.setValues(nil,nil)
+            priceRowView.setValues(nil,nil)
+            participantsRowView.setValues(nil,nil)
         }
     }
 }

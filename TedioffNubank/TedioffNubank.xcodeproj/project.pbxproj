@@ -28,7 +28,6 @@
 		E55A1336231EC1160089ED13 /* CardRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55A1324231EC1160089ED13 /* CardRowViewModel.swift */; };
 		E55A1337231EC1160089ED13 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55A1326231EC1160089ED13 /* Network.swift */; };
 		E55A1339231EC1160089ED13 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55A1328231EC1160089ED13 /* Activity.swift */; };
-		E55A133A231EC1160089ED13 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55A1329231EC1160089ED13 /* NetworkError.swift */; };
 		E55A133B231EC1160089ED13 /* TedioffNubank.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E55A132A231EC1160089ED13 /* TedioffNubank.xcdatamodeld */; };
 		E55A133E231EC11E0089ED13 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55A133D231EC11D0089ED13 /* ViewController.swift */; };
 		FCC437173FFE6B99DFCE93BF /* Pods_TedioffNubankUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6399B7568640DC5C05ABAD9 /* Pods_TedioffNubankUITests.framework */; };
@@ -84,7 +83,6 @@
 		E55A1324231EC1160089ED13 /* CardRowViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardRowViewModel.swift; sourceTree = "<group>"; };
 		E55A1326231EC1160089ED13 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		E55A1328231EC1160089ED13 /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
-		E55A1329231EC1160089ED13 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		E55A132B231EC1160089ED13 /* TedioffNubank.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TedioffNubank.xcdatamodel; sourceTree = "<group>"; };
 		E55A133D231EC11D0089ED13 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E5E59E47CC580B1589065B06 /* Pods-TedioffNubank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TedioffNubank.debug.xcconfig"; path = "Target Support Files/Pods-TedioffNubank/Pods-TedioffNubank.debug.xcconfig"; sourceTree = "<group>"; };
@@ -250,7 +248,6 @@
 			isa = PBXGroup;
 			children = (
 				E55A1326231EC1160089ED13 /* Network.swift */,
-				E55A1329231EC1160089ED13 /* NetworkError.swift */,
 				E55A1328231EC1160089ED13 /* Activity.swift */,
 				E53DA8BF23232AA0004D3E99 /* ActivityManager.swift */,
 				E55A132A231EC1160089ED13 /* TedioffNubank.xcdatamodeld */,
@@ -506,7 +503,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E55A132E231EC1160089ED13 /* GetActivityView.swift in Sources */,
-				E55A133A231EC1160089ED13 /* NetworkError.swift in Sources */,
 				E55A1333231EC1160089ED13 /* CardRowView.swift in Sources */,
 				E55A132F231EC1160089ED13 /* CardView.swift in Sources */,
 				E55A1330231EC1160089ED13 /* UIColor+Custom.swift in Sources */,

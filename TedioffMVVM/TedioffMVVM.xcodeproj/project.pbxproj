@@ -21,7 +21,6 @@
 		E522046A231BEA5F0092C100 /* CardRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5220469231BEA5F0092C100 /* CardRowViewModel.swift */; };
 		E5266AF2231C00BF00B4AD3F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5266AF1231C00BF00B4AD3F /* ViewController.swift */; };
 		E564D10D2324350400819015 /* ActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564D10C2324350400819015 /* ActivityManager.swift */; };
-		E5F5F9C2231C61710094283D /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F5F9BE231C61710094283D /* NetworkError.swift */; };
 		E5F5F9C3231C61710094283D /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F5F9BF231C61710094283D /* Network.swift */; };
 		E5F5F9C4231C61710094283D /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F5F9C0231C61710094283D /* Activity.swift */; };
 		E5F5F9CB231C61F70094283D /* UIColor+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F5F9C8231C61F70094283D /* UIColor+Custom.swift */; };
@@ -67,7 +66,6 @@
 		E5220469231BEA5F0092C100 /* CardRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRowViewModel.swift; sourceTree = "<group>"; };
 		E5266AF1231C00BF00B4AD3F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E564D10C2324350400819015 /* ActivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityManager.swift; sourceTree = "<group>"; };
-		E5F5F9BE231C61710094283D /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		E5F5F9BF231C61710094283D /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		E5F5F9C0231C61710094283D /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		E5F5F9C8231C61F70094283D /* UIColor+Custom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Custom.swift"; sourceTree = "<group>"; };
@@ -158,7 +156,6 @@
 				E522041F231BE7F30092C100 /* TedioffMVVM.xcdatamodeld */,
 				E5F5F9C0231C61710094283D /* Activity.swift */,
 				E5F5F9BF231C61710094283D /* Network.swift */,
-				E5F5F9BE231C61710094283D /* NetworkError.swift */,
 				E564D10C2324350400819015 /* ActivityManager.swift */,
 			);
 			path = Model;
@@ -343,7 +340,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5F5F9CB231C61F70094283D /* UIColor+Custom.swift in Sources */,
-				E5F5F9C2231C61710094283D /* NetworkError.swift in Sources */,
 				E5220458231BE8E80092C100 /* CardRowView.swift in Sources */,
 				E5220419231BE7F30092C100 /* AppDelegate.swift in Sources */,
 				E5F5F9CC231C61F70094283D /* UIFonts+Custom.swift in Sources */,

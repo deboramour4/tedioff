@@ -17,22 +17,26 @@ class GetActivityView: UIView {
     weak var delegate: GetActivityViewDelegate?
     
     // MARK: - UI elements
-
-//    private lazy var hatImage: UIImageView = {
-//        var image = UIImageView(frame: .zero)
-//        image.contentMode = .scaleAspectFit
-//        image.image = UIImage(named: "topHat")
-//        image.isUserInteractionEnabled = true
-//        image.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hatImageTapped)))
-//        return image
-//    }()
+    
     private lazy var newActivityButton: UIButton = {
         var button = UIButton(frame: .zero)
         button.backgroundColor = UIColor.accent
         button.setTitleColor(UIColor.white, for: .normal)
         button.titleLabel?.font = UIFont.button
         button.layer.cornerRadius = 16
+        button.setTitle("New activity", for: .normal)
         button.addTarget(self, action: #selector(newActivitybuttonTapped), for: .touchUpInside)
+        return button
+    }()
+    lazy var clearButton: UIButton = {
+        var button = UIButton(frame: .zero)
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.setTitleColor(UIColor.grayLighter, for: .highlighted)
+        button.setTitleColor(UIColor.gray, for: .disabled)
+        button.setTitle("Clear", for: .normal)
+        button.addTarget(self, action: #selector(clearbuttonTapped), for: .touchUpInside)
+        button.isEnabled = false
+        button.titleLabel?.font = UIFont.button
         return button
     }()
     private lazy var backgroundView: UIView = {
@@ -65,41 +69,44 @@ class GetActivityView: UIView {
     
     private func setup() {
         backgroundColor = UIColor.primary
-        newActivityButton.setTitle("New activity", for: .normal)
         addViews()
     }
     override func didMoveToSuperview() {
         autoLayout()
     }
     private func addViews() {
-//        addSubview(hatImage)
         addSubview(newActivityButton)
+        addSubview(clearButton)
         addSubview(cardView)
         addSubview(backgroundView)
         addSubview(indicatorView)
     }
     private func autoLayout() {
-//        hatImage.anchor(leading: safeAreaLayoutGuide.leadingAnchor, top: safeAreaLayoutGuide.topAnchor, trailing: safeAreaLayoutGuide.trailingAnchor, padding: UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16))
-//        hatImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.3).isActive = true
-        
         newActivityButton.anchor(leading: safeAreaLayoutGuide.leadingAnchor, top: safeAreaLayoutGuide.topAnchor, trailing: safeAreaLayoutGuide.trailingAnchor, padding: UIEdgeInsets(top: 32, left: 16, bottom: 0, right: 16))
         
-        cardView.anchor(leading: leadingAnchor, top: newActivityButton.bottomAnchor, trailing: trailingAnchor, bottom: safeAreaLayoutGuide.bottomAnchor, padding: UIEdgeInsets(top: 32, left: 16, bottom: 16, right: 16))
+        cardView.anchor(leading: leadingAnchor, top: newActivityButton.bottomAnchor, trailing: trailingAnchor, padding: UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16))
+        
+        clearButton.anchor(leading: leadingAnchor, top: cardView.bottomAnchor, trailing: trailingAnchor, bottom: safeAreaLayoutGuide.bottomAnchor, padding: UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 0))
         
         backgroundView.anchor(leading: leadingAnchor, top: topAnchor, trailing: trailingAnchor, bottom: bottomAnchor)
         
         indicatorView.centralize(in: self)
     }
     func setViewValues(with activity: Activity?) {
-        if let activity = activity {
-            self.cardView.setViewValues(with: activity)
+        if let _ = activity {
+            newActivityButton.isEnabled = true
+            clearButton.isEnabled = true
+        } else {
+            newActivityButton.isEnabled = true
+            clearButton.isEnabled = false
         }
-    }
-    @objc private func hatImageTapped() {
-        delegate?.didTapSearch()
+        cardView.setViewValues(with: activity)
     }
     @objc private func newActivitybuttonTapped() {
-        delegate?.didTapSearch()
+        delegate?.getNewActivity()
+    }
+    @objc private func clearbuttonTapped() {
+        delegate?.clearActivity()
     }
     func startLoading() {
         UIView.animate(withDuration: 0.3) {
@@ -116,5 +123,6 @@ class GetActivityView: UIView {
 }
 
 protocol GetActivityViewDelegate: class {
-    func didTapSearch()
+    func getNewActivity()
+    func clearActivity()
 }

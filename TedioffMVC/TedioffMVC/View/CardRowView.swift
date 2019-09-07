@@ -61,25 +61,25 @@ class CardRowView: UIView {
         
         label.anchor(leading: imageView.trailingAnchor, top: topAnchor, trailing: trailingAnchor, bottom: bottomAnchor, padding: UIEdgeInsets(top: 0, left: 32, bottom: 0, right: 0))
     }
-    func setImage(_ image: UIImage?) {
-        self.imageView.image = image
-    }
-    func setText(_ text: String?) {
-        guard let text = text else { return }
+
+    func setValues(_ image: UIImage?, _ text: String?) {
+        imageView.image = image
         
         if isPrice != nil {
+            
+            guard let text = text else {
+                label.attributedText = nil
+                return
+            }
+            
             let value = Int(text) ?? 0
             
             let priceString = NSMutableAttributedString(string: "$$$$$", attributes: [NSAttributedString.Key.font: UIFont.primary ?? UIFont.systemFont(ofSize: 18)])
             priceString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.accent, range: NSRange(location: 0,length: value+1))
             label.attributedText = priceString
         } else {
-            self.label.text = text.capitalized
+            label.text = text?.capitalized
         }
-    }
-    func setValues(_ image: UIImage?, _ text: String?) {
-        self.setImage(image)
-        self.setText(text)
     }
    
 }

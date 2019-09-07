@@ -12,6 +12,17 @@ import Foundation
 
 class Network: NSObject {
     
+    // MARK: - Network Error
+    
+    enum NetworkError: Error {
+        
+        // MARK: - Cases
+        
+        case invalidURL
+        case parseError
+        case requestError
+    }
+    
     // MARK: - Typealias
     
     typealias NetworkHandler<T> = ((NetworkError?, T?) -> Void)
