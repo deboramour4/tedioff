@@ -22,16 +22,7 @@ class Activity: Decodable {
     var link: String?
     var key: String
     
-    var description: String {
-        return """
-        Name: \(activity)
-        Accessibility: \(accessibility)
-        Type: \(type)
-        Participants: \(participants)
-        Price: \(price)
-        Key: \(key)
-        """
-    }
+    // MARK: Mocked variable
     
     static var mocked = Activity(activity: "", accessibility: 0.0, type: .busywork, participants: 0, price: 0.0, link: nil, key: "")
     
@@ -45,6 +36,7 @@ class Activity: Decodable {
         self.price = price
         self.link = link
         self.key = key
+        
     }
     
 }

@@ -1,0 +1,6 @@
+framework module Pods_TedioffNubankTests {
+  umbrella header "Pods-TedioffNubankTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

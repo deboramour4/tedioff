@@ -14,15 +14,17 @@ class ViewController: UIViewController {
     
     // MARK: - ViewModels
 
-    var viewModel: MainViewModel = MainViewModel()
+    var mainViewModel: MainViewModel = MainViewModel(api: Network.shared)
     
-    var cardViewModel: CardViewModel = CardViewModel(api: Network.shared)
+    // MARK: - View
     
     lazy var mainView: GetActivityView = {
         let view = GetActivityView(frame: .zero)
         view.delegate = self
         return view
     }()
+    
+    // MARK: - Initializers
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,9 +36,8 @@ class ViewController: UIViewController {
     }
     
     func initVM() {
-        cardViewModel.updateLoadingStatus = { [weak self] in
+        mainViewModel.updateLoadingStatus = { [weak self] (isLoading) in
             DispatchQueue.main.async {
-                let isLoading = self?.cardViewModel.isLoading ?? false
                 if isLoading {
                     self?.mainView.startLoading()
                 } else {
@@ -45,9 +46,9 @@ class ViewController: UIViewController {
             }
         }
         
-        cardViewModel.updateActivity = { [weak self] in
+        mainViewModel.updateActivity = { [weak self] in
             DispatchQueue.main.async {
-                self?.cardViewModel.configure(self?.mainView.getCardView())
+                self?.mainViewModel.configure(self?.mainView.getCardView())
             }
         }
     }
@@ -58,6 +59,6 @@ class ViewController: UIViewController {
 
 extension ViewController: GetActivityViewDelegate {
     func didTapSearch() {
-        cardViewModel.fetchNewActivity()
+        mainViewModel.fetchNewActivity()
     }
 }

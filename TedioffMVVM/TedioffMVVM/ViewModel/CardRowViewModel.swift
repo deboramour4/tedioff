@@ -6,31 +6,30 @@
 //  Copyright © 2019 Débora Oliveira. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
-//
 // MARK: - CardRowViewModel
 // FIXME: Isso aqui seria melhor com generics
+
 struct CardRowViewModel {
-    //
+    
     // MARK: - Variables
-    //
-    private let activityData: (String, String)
+    
+    private let activityData: (imageName: String, text: String)
     let type: String
     
-    //
     // MARK: - Initializers
-    //
-    init(activity data: (String, String)) {
+    
+    init(activity data: (imageName: String, text: String)) {
         self.activityData = data
-        self.type = data.0
+        self.type = data.imageName
     }
     
-    //
     // MARK: - Computed properties
-    //
+    
     public var image: UIImage {
-        return UIImage(named: activityData.0) ?? UIImage(named: "like")!
+        return UIImage(named: activityData.imageName) ?? UIImage(named: "like")!
     }
     
     public var text: NSMutableAttributedString {
@@ -43,7 +42,7 @@ struct CardRowViewModel {
             
             return priceString
         } else {
-            return NSMutableAttributedString(string: activityData.1)
+            return NSMutableAttributedString(string: activityData.text)
         }
     }
 }
