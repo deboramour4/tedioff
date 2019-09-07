@@ -66,18 +66,22 @@ class Controller {
         action
             .flatMap ({ [activityManager] action -> Completable in
                 switch action {
+                    
                 case .confirm:
-                    AppDelegate.status.onNext(.loading)
+                    
+                    AppDelegate.status.accept(.loading)
                     activityManager.getActivity({ (activity) in
                         if let activity = activity {
-                            AppDelegate.status.onNext(ViewStatus.showing(activity))
+                            AppDelegate.status.accept(ViewStatus.showing(activity))
                         } else {
-                            AppDelegate.status.onNext(ViewStatus.empty)
+                            AppDelegate.status.accept(.empty)
                         }
                     })
                     return .empty()
+                    
                 case .clear:
-                    AppDelegate.status.onNext(ViewStatus.empty)
+                    
+                    AppDelegate.status.accept(.empty)
                     return .empty()
                 }
             })

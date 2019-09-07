@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 import CoreData
 
 @UIApplicationMain
@@ -16,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     // FIXME: Problaby that's not correct
-    static var status = BehaviorSubject(value: ViewStatus.empty)
+    static var status = BehaviorRelay(value: ViewStatus.empty)
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
