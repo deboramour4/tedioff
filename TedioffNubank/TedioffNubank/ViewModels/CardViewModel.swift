@@ -14,48 +14,43 @@ struct CardViewModel {
     
     // MARK: - Variables
     
-    var cardRowViewModels: [CardRowViewModel] = [CardRowViewModel]()
-    
-    var activity: Activity {
-        // FIXME: Rx
-        didSet {
-            createRowViewModels()
-        }
-    }
-    var title: String {
-        return activity.activity
-    }
-    var type: String {
-        return activity.type.rawValue.capitalized
-    }
-    var accessibility: String {
-        return activity.accessibility.description
-    }
-    var price: String {
-        let priceValue = Int(activity.price * 4)
-        return priceValue.description
-    }
-    var participants: String {
-        if activity.participants == 1 {
-            return activity.participants.description + " participant"
-        } else {
-            return activity.participants.description + " participants"
-        }
-    }
+    let cardRowViewModels: [CardRowViewModel]?
+    let title: String?
+    let type: String?
+    let accessibility: String?
+    let price: String?
+    let participants: String?
+    let emptyTitleIsHidden: Bool
+    let emptyTitle: String = "Nothing to show"
     
     // MARK: - Initializers
     
-    init(activity: Activity) {
-        self.activity = activity
-        self.createRowViewModels()
+    init(status: ViewStatus) {
+        
+        switch status {
+        case .showing(let newActivity):
+            
+            title = newActivity.activity
+            type = newActivity.type.rawValue.capitalized
+            accessibility = newActivity.accessibility.description
+            price = Int(newActivity.price * 4).description
+            participants = newActivity.participants == 1 ? newActivity.participants.description + " participant" : newActivity.participants.description + " participants"
+            emptyTitleIsHidden = true
+            
+            cardRowViewModels = [
+                CardRowViewModel(activity: ("type", type!)),
+                CardRowViewModel(activity: ("accessibility", accessibility!)),
+                CardRowViewModel(activity: ("price", price!)),
+                CardRowViewModel(activity: ("participants", participants!))
+            ]
+        case .loading, .empty:
+            title = nil
+            type = nil
+            accessibility = nil
+            price = nil
+            participants = nil
+            emptyTitleIsHidden = false
+            cardRowViewModels = nil
+        }
     }
-    
-    mutating func createRowViewModels() {
-        cardRowViewModels = [
-            CardRowViewModel(activity: ("type", type)),
-            CardRowViewModel(activity: ("accessibility", accessibility)),
-            CardRowViewModel(activity: ("price", price)),
-            CardRowViewModel(activity: ("participants", participants))
-        ]
-    }    
 }

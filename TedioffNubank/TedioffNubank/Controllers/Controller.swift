@@ -10,15 +10,26 @@ import Foundation
 import RxCocoa
 import RxSwift
 
+// MARK: - ViewStatus
+
 enum ViewStatus {
-    case showing(Activity?)
+    case showing(Activity)
     case loading
+    case empty
 }
 
+// MARK: - Controller
+
 class Controller {
+    
+    // MARK: - Action Enum
+    
     enum Action {
         case confirm
+        case clear
     }
+    
+    // MARK: - Variables
     
 //    let disposeBag = DisposeBag()
     let viewController: ViewController
@@ -27,6 +38,8 @@ class Controller {
     lazy var action: Observable<Action> = {
         return self.viewController.confirm.map { .confirm }
     }()
+    
+    // MARK: - Initialization
     
     init(status: Observable<ViewStatus>,
          activityManager: ActivityManager = .init(),
@@ -38,12 +51,13 @@ class Controller {
         subscribe(toAction: action)
     }
     
+    // MARK: - Subscribers
+    
     func subscribe(toStatus accountStatus: Observable<ViewStatus>) {
         accountStatus
             .subscribe(onNext: { [viewController] (status) in
                 let viewModel = MainViewModel(status: status)
                 viewController.bind(viewModel)
-                print("changed status")
             })
 //            .disposed(by: disposeBag)
     }
@@ -53,10 +67,17 @@ class Controller {
             .flatMap ({ [activityManager] action -> Completable in
                 switch action {
                 case .confirm:
-                    print("action tap button")
+                    AppDelegate.status.onNext(.loading)
                     activityManager.getActivity({ (activity) in
-                        AppDelegate.status.onNext(ViewStatus.showing(activity))
+                        if let activity = activity {
+                            AppDelegate.status.onNext(ViewStatus.showing(activity))
+                        } else {
+                            AppDelegate.status.onNext(ViewStatus.empty)
+                        }
                     })
+                    return .empty()
+                case .clear:
+                    AppDelegate.status.onNext(ViewStatus.empty)
                     return .empty()
                 }
             })

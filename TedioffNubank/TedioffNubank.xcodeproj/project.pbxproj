@@ -252,9 +252,9 @@
 			isa = PBXGroup;
 			children = (
 				E55A1326231EC1160089ED13 /* Network.swift */,
+				E55A1329231EC1160089ED13 /* NetworkError.swift */,
 				E55A1327231EC1160089ED13 /* ActivityType.swift */,
 				E55A1328231EC1160089ED13 /* Activity.swift */,
-				E55A1329231EC1160089ED13 /* NetworkError.swift */,
 				E53DA8BF23232AA0004D3E99 /* ActivityManager.swift */,
 				E55A132A231EC1160089ED13 /* TedioffNubank.xcdatamodeld */,
 			);

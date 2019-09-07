@@ -12,15 +12,17 @@ import Foundation
 
 class Network: NSObject {
     
-    // MARK: - Variables
+    // MARK: - Typealias
     
     typealias NetworkHandler<T> = ((NetworkError?, T?) -> Void)
-    static var shared = Network(api: URL(string: "https://www.boredapi.com/api/activity/"))
+    
+    // MARK: - Properties
+
     var apiUrl: URL?
     
-    // MARK: - Initializers
+    // MARK: - Initialization
     
-    private init(api: URL? = URL(string: "https://www.boredapi.com/api/activity/")) {
+    init(api: URL?) {
         self.apiUrl = api
     }
     

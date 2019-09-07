@@ -14,47 +14,50 @@ struct MainViewModel {
 
     // MARK: - Variables
     
-    private let apiService: Network
-    
-    private var cardViewModel: CardViewModel
-    
-    private var activity: Activity? {
-        // FIXME: Rx?
-        didSet {
-            self.cardViewModel.activity = activity ?? Activity.mocked
-        }
-    }
-    private let buttonEnabled: Bool
-    private let buttonText: String = "New activity"
-    private var isLoading: Bool
+    var cardViewModel: CardViewModel
+    let newActivityButtonEnabled: Bool
+    let newActivityButtonTitle: String = "New activity"
+    let clearButtonEnabled: Bool
+    let clearButtonTitle: String = "Clear"
+    var isLoading: Bool
     
     // MARK: - Initializers
     
-    init(status: ViewStatus, api: Network = Network.shared) {
+    init(status: ViewStatus) {
         
         switch status {
         case .showing(let newActivity):
-            buttonEnabled = true
+            newActivityButtonEnabled = true
+            clearButtonEnabled = true
             isLoading = false
-            activity = newActivity
+            cardViewModel = CardViewModel(status: .showing(newActivity))
         case .loading:
-            buttonEnabled = false
+            newActivityButtonEnabled = false
+            clearButtonEnabled = false
             isLoading = true
-            activity = Activity.mocked
+            cardViewModel = CardViewModel(status: .loading)
+        case .empty:
+            newActivityButtonEnabled = true
+            clearButtonEnabled = false
+            isLoading = false
+            cardViewModel = CardViewModel(status: .empty)
         }
-        
-        apiService = api
-        cardViewModel = CardViewModel(activity: activity ?? Activity.mocked)
-        
     }
     
     // MARK: - Class methods
     
-    func configure(_ view: CardView?) {
-        view?.setViewValues(title: cardViewModel.title,
-                            type: (cardViewModel.cardRowViewModels[0].image, cardViewModel.cardRowViewModels[0].text),
-                            accessibility: (cardViewModel.cardRowViewModels[1].image, cardViewModel.cardRowViewModels[1].text),
-                            price: (cardViewModel.cardRowViewModels[2].image, cardViewModel.cardRowViewModels[2].text),
-                            participants: (cardViewModel.cardRowViewModels[3].image, cardViewModel.cardRowViewModels[3].text))
+    func configure(_ view: GetActivityView?) {
+        view?.setViewValues(newActivityButtonIsEnabled: newActivityButtonEnabled,
+                            newActivityButtonTitle: newActivityButtonTitle,
+                            clearButtonIsEnabled: clearButtonEnabled,
+                            clearButtonTitle: clearButtonTitle,
+                            emptyTitleIsHidden: cardViewModel.emptyTitleIsHidden,
+                            emptyTitle: cardViewModel.emptyTitle,
+                            isLoading: isLoading,
+                            title: cardViewModel.title,
+                            type: (cardViewModel.cardRowViewModels?[0].image, cardViewModel.cardRowViewModels?[0].text),
+                            accessibility: (cardViewModel.cardRowViewModels?[1].image, cardViewModel.cardRowViewModels?[1].text),
+                            price: (cardViewModel.cardRowViewModels?[2].image, cardViewModel.cardRowViewModels?[2].text),
+                            participants: (cardViewModel.cardRowViewModels?[3].image, cardViewModel.cardRowViewModels?[3].text))
     }
 }

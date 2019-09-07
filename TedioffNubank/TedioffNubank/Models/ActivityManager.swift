@@ -8,18 +8,28 @@
 
 import Foundation
 
+// MARK: - ActivityManager
+
 class ActivityManager {
+    
+    // MARK: - Typealias
     
     typealias GetActivity = ((Activity?) -> Void)
     
+     // MARK: - Properties
+    
     private let service: Network
     
-    init(service: Network = Network.shared) {
+    // MARK: - Initialization
+    
+    init(service: Network = Network(api: URL(string: "https://www.boredapi.com/api/activity/"))) {
         self.service = service
     }
     
+    // MARK: - ClassMethods
+    
     func getActivity(_ completion: @escaping GetActivity) {
-        service.requestJSON(type: Activity.self, completion: { [weak self] (error, activity) in
+        service.requestJSON(type: Activity.self, completion: { (error, activity) in
             DispatchQueue.main.async {
                 completion(activity)
             }

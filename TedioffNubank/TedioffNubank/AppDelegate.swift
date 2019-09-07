@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     // FIXME: Problaby that's not correct
-    static var status = BehaviorSubject(value: ViewStatus.loading)
+    static var status = BehaviorSubject(value: ViewStatus.empty)
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         

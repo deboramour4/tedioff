@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     
     let mainView = GetActivityView()
     
-    // MARK: - Initializers
+    // MARK: - Initialization
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,12 +25,14 @@ class ViewController: UIViewController {
         self.title = "Nubank Architecture"
     }
     
+    // MARK: - Binding
+    
     lazy var confirm: ControlEvent<Void> = {
         return self.mainView.newActivityButton.rx.tap
     }()
     
     func bind(_ viewModel: MainViewModel) {
-        viewModel.configure(mainView.getCardView())
+        viewModel.configure(mainView)
     }
     
 }
