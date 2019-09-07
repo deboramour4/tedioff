@@ -22,7 +22,14 @@ class CardView: UIView {
         label.numberOfLines = 0
         return label
     }()
-    // FIXME: Talvez fosse bom indexPath aqui
+    private lazy var emptyLabel: UILabel = {
+        var label = UILabel(frame: .zero)
+        label.textColor = UIColor.grayLighter
+        label.textAlignment = .center
+        label.font = UIFont.title
+        label.numberOfLines = 0
+        return label
+    }()
     private lazy var typeRowView: CardRowView = {
         var row = CardRowView(frame: .zero)
         return row
@@ -65,6 +72,7 @@ class CardView: UIView {
     }
     private func addViews() {
         addSubview(titleLabel)
+        addSubview(emptyLabel)
         addSubview(typeRowView)
         addSubview(accessibilityRowView)
         addSubview(priceRowView)
@@ -80,9 +88,13 @@ class CardView: UIView {
         priceRowView.anchor(leading: leadingAnchor, top: accessibilityRowView.bottomAnchor, trailing: trailingAnchor, padding: UIEdgeInsets(top: 32, left: 0, bottom: 0, right: 0))
         
         participantsRowView.anchor(leading: leadingAnchor, top: priceRowView.bottomAnchor, trailing: trailingAnchor, padding: UIEdgeInsets(top: 32, left: 0, bottom: 0, right: 0))
+        
+        emptyLabel.centralize(in: self)
     }
     
-    func setViewValues(title: String?, type: (UIImage?, NSMutableAttributedString?), accessibility: (UIImage?, NSMutableAttributedString?), price: (UIImage?, NSMutableAttributedString?), participants: (UIImage?, NSMutableAttributedString?)) {
+    func setViewValues(emptyTitleIsHidden: Bool, emptyTitle: String?, title: String?, type: (UIImage?, NSMutableAttributedString?), accessibility: (UIImage?, NSMutableAttributedString?), price: (UIImage?, NSMutableAttributedString?), participants: (UIImage?, NSMutableAttributedString?)) {
+        self.emptyLabel.isHidden = emptyTitleIsHidden
+        self.emptyLabel.text = emptyTitle
         self.titleLabel.text = title
         self.typeRowView.setValues(type.0, type.1)
         self.accessibilityRowView.setValues(accessibility.0, accessibility.1)

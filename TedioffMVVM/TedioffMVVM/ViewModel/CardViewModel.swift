@@ -14,61 +14,72 @@ struct CardViewModel {
     
     // MARK: - Variables
     
-    var cardRowViewModels: [CardRowViewModel] = [CardRowViewModel]()
+    var cardRowViewModels: [CardRowViewModel]?
+    var emptyTitleIsHidden: Bool
+    let emptyTitle: String = "Nothing to show"
     
-    var activity: Activity {
+    var activity: Activity? {
         didSet {
-            createRowViewModels()
+            if let _ = activity {
+                emptyTitleIsHidden = true
+                createRowViewModels()
+            } else {
+                emptyTitleIsHidden = false
+                cardRowViewModels = nil
+            }
         }
     }
-    var title: String {
-        return activity.activity
+    var title: String? {
+        return activity?.activity
     }
-    var type: String {
-        return activity.type.rawValue.capitalized
+    var type: String? {
+        return activity?.type.rawValue.capitalized
     }
-    var accessibility: String {
-        return activity.accessibility.description
+    var accessibility: String? {
+        return activity?.accessibility.description
     }
-    var price: String {
-        let priceValue = Int(activity.price * 4)
-        return priceValue.description
-    }
-    var participants: String {
-        if activity.participants == 1 {
-            return activity.participants.description + " participant"
+    var price: String? {
+        if let activity = activity {
+            let priceValue = Int(activity.price * 4)
+            return priceValue.description
         } else {
-            return activity.participants.description + " participants"
+            return nil
+        }
+    }
+    var participants: String? {
+        if let activity = activity {
+            let participantsText = activity.participants == 1 ?
+                activity.participants.description + " participant" :
+                activity.participants.description + " participants"
+            return participantsText
+        } else {
+            return nil
         }
     }
     
     // MARK: - Initializers
     
-    init(activity: Activity) {
+    init(activity: Activity?) {
         self.activity = activity
-        self.createRowViewModels()
+        
+        if let _ = activity {
+            emptyTitleIsHidden = true
+            createRowViewModels()
+        } else {
+            emptyTitleIsHidden = false
+            cardRowViewModels = nil
+        }
     }
     
     mutating func createRowViewModels() {
-        cardRowViewModels = [
-            CardRowViewModel(activity: ("type", type)),
-            CardRowViewModel(activity: ("accessibility", accessibility)),
-            CardRowViewModel(activity: ("price", price)),
-            CardRowViewModel(activity: ("participants", participants))
-        ]
-    }
-    
-    // MARK: Class Methods
-    
-    func getViewModel(for type: String) -> CardRowViewModel? {
-        let cardRowViewModel = cardRowViewModels.filter { (viewModel) -> Bool in
-            if viewModel.type == type {
-                return true
-            }
-            return false
+        if activity != nil {
+            cardRowViewModels = [
+                CardRowViewModel(activity: ("type", type!)),
+                CardRowViewModel(activity: ("accessibility", accessibility!)),
+                CardRowViewModel(activity: ("price", price!)),
+                CardRowViewModel(activity: ("participants", participants!))
+            ]
         }
-        
-        return cardRowViewModel.first
     }
     
 }

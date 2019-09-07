@@ -12,6 +12,23 @@ import Foundation
 
 class Activity: Decodable {
     
+    // MARK: - ActivityType
+    
+    enum ActivityType: String, Decodable {
+        
+        // MARK: - Cases
+        
+        case education
+        case recreational
+        case social
+        case diy
+        case charity
+        case cooking
+        case relaxation
+        case music
+        case busywork
+    }
+    
     // MARK - Properties
     
     var activity: String

@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     
     // MARK: - ViewModels
 
-    var mainViewModel: MainViewModel = MainViewModel(api: Network.shared)
+    var mainViewModel: MainViewModel = MainViewModel()
     
     // MARK: - View
     
@@ -46,11 +46,13 @@ class ViewController: UIViewController {
             }
         }
         
-        mainViewModel.updateActivity = { [weak self] in
+        mainViewModel.updateEmptyStatus = { [weak self] in
             DispatchQueue.main.async {
-                self?.mainViewModel.configure(self?.mainView.getCardView())
+                self?.mainViewModel.configure(self?.mainView)
             }
         }
+        
+        self.mainViewModel.configure(self.mainView)
     }
     
 }
@@ -58,7 +60,11 @@ class ViewController: UIViewController {
 // MARK: - ViewDelegate
 
 extension ViewController: GetActivityViewDelegate {
-    func didTapSearch() {
+    func getNewActivity() {
         mainViewModel.fetchNewActivity()
+    }
+    
+    func clearActivity() {
+        mainViewModel.clearView()
     }
 }

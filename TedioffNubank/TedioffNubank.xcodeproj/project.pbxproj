@@ -27,7 +27,6 @@
 		E55A1335231EC1160089ED13 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55A1323231EC1160089ED13 /* MainViewModel.swift */; };
 		E55A1336231EC1160089ED13 /* CardRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55A1324231EC1160089ED13 /* CardRowViewModel.swift */; };
 		E55A1337231EC1160089ED13 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55A1326231EC1160089ED13 /* Network.swift */; };
-		E55A1338231EC1160089ED13 /* ActivityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55A1327231EC1160089ED13 /* ActivityType.swift */; };
 		E55A1339231EC1160089ED13 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55A1328231EC1160089ED13 /* Activity.swift */; };
 		E55A133A231EC1160089ED13 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55A1329231EC1160089ED13 /* NetworkError.swift */; };
 		E55A133B231EC1160089ED13 /* TedioffNubank.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E55A132A231EC1160089ED13 /* TedioffNubank.xcdatamodeld */; };
@@ -84,7 +83,6 @@
 		E55A1323231EC1160089ED13 /* MainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		E55A1324231EC1160089ED13 /* CardRowViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardRowViewModel.swift; sourceTree = "<group>"; };
 		E55A1326231EC1160089ED13 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
-		E55A1327231EC1160089ED13 /* ActivityType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityType.swift; sourceTree = "<group>"; };
 		E55A1328231EC1160089ED13 /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		E55A1329231EC1160089ED13 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		E55A132B231EC1160089ED13 /* TedioffNubank.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TedioffNubank.xcdatamodel; sourceTree = "<group>"; };
@@ -253,7 +251,6 @@
 			children = (
 				E55A1326231EC1160089ED13 /* Network.swift */,
 				E55A1329231EC1160089ED13 /* NetworkError.swift */,
-				E55A1327231EC1160089ED13 /* ActivityType.swift */,
 				E55A1328231EC1160089ED13 /* Activity.swift */,
 				E53DA8BF23232AA0004D3E99 /* ActivityManager.swift */,
 				E55A132A231EC1160089ED13 /* TedioffNubank.xcdatamodeld */,
@@ -513,7 +510,6 @@
 				E55A1333231EC1160089ED13 /* CardRowView.swift in Sources */,
 				E55A132F231EC1160089ED13 /* CardView.swift in Sources */,
 				E55A1330231EC1160089ED13 /* UIColor+Custom.swift in Sources */,
-				E55A1338231EC1160089ED13 /* ActivityType.swift in Sources */,
 				E53DA8BC23215FDE004D3E99 /* Controller.swift in Sources */,
 				E55A1334231EC1160089ED13 /* CardViewModel.swift in Sources */,
 				E55A133B231EC1160089ED13 /* TedioffNubank.xcdatamodeld in Sources */,
