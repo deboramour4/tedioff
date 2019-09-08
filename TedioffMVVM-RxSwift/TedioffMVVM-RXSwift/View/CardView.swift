@@ -14,7 +14,7 @@ class CardView: UIView {
     
     // MARK: - UI elements
     
-    private lazy var titleLabel: UILabel = {
+    lazy var titleLabel: UILabel = {
         var label = UILabel(frame: .zero)
         label.textColor = UIColor.black
         label.textAlignment = .center
@@ -22,7 +22,7 @@ class CardView: UIView {
         label.numberOfLines = 0
         return label
     }()
-    private lazy var emptyLabel: UILabel = {
+    lazy var emptyLabel: UILabel = {
         var label = UILabel(frame: .zero)
         label.textColor = UIColor.grayLighter
         label.textAlignment = .center
@@ -30,19 +30,19 @@ class CardView: UIView {
         label.numberOfLines = 0
         return label
     }()
-    private lazy var typeRowView: CardRowView = {
+    lazy var typeRowView: CardRowView = {
         var row = CardRowView(frame: .zero)
         return row
     }()
-    private lazy var accessibilityRowView: CardRowView = {
+    lazy var accessibilityRowView: CardRowView = {
         var row = CardRowView(frame: .zero)
         return row
     }()
-    private lazy var priceRowView: CardRowView = {
+    lazy var priceRowView: CardRowView = {
         var row = CardRowView(frame: .zero)
         return row
     }()
-    private lazy var participantsRowView: CardRowView = {
+    lazy var participantsRowView: CardRowView = {
         var row = CardRowView(frame: .zero)
         return row
     }()
@@ -92,7 +92,7 @@ class CardView: UIView {
         emptyLabel.centralize(in: self)
     }
     
-    func setViewValues(emptyTitleIsHidden: Bool, emptyTitle: String?, title: String?, type: (UIImage?, NSMutableAttributedString?), accessibility: (UIImage?, NSMutableAttributedString?), price: (UIImage?, NSMutableAttributedString?), participants: (UIImage?, NSMutableAttributedString?)) {
+    func setViewValues(emptyTitleIsHidden: Bool, emptyTitle: String?, title: String?, type: (String, NSMutableAttributedString?), accessibility: (String, NSMutableAttributedString?), price: (String, NSMutableAttributedString?), participants: (String, NSMutableAttributedString?)) {
         self.emptyLabel.isHidden = emptyTitleIsHidden
         self.emptyLabel.text = emptyTitle
         self.titleLabel.text = title

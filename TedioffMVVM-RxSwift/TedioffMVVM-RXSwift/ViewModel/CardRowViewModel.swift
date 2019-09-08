@@ -7,40 +7,48 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
+
+// How to fix this?
 import UIKit
 
 // MARK: - CardRowViewModel
-// FIXME: Isso aqui seria melhor com generics
 
 struct CardRowViewModel {
     
-    // MARK: - Variables
+    // Inputs
+    public let activityData = PublishSubject<(type: String, value: String)?>()
     
-    private let activityData: (type: String, value: String)
+    public let value: String? = nil
+    
+    // Outputs
+    public let imageName: Observable<String?>
+    public let text: Observable<NSMutableAttributedString?>
     
     // MARK: - Initializers
     
-    init(activity data: (type: String, value: String)) {
-        self.activityData = data
+    init() {
+        
+        imageName  = activityData
+            .map { $0 == nil ? nil : $0?.type }
+        
+        text = activityData
+            .map {
+                guard let data = $0 else { return nil }
+                
+                if data.type == "price" {
+                    let value = Int(data.value) ?? 0
+        
+                    let priceString = NSMutableAttributedString(string: "$$$$$", attributes: [NSAttributedString.Key.font: UIFont.primary ?? UIFont.systemFont(ofSize: 18)])
+        
+                    priceString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.accent, range: NSRange(location: 0,length: value+1))
+        
+                    return priceString
+                } else {
+                    return NSMutableAttributedString(string: data.value)
+                }
+            }
     }
     
-    // MARK: - Computed properties
-    
-    public var image: UIImage {
-        return UIImage(named: activityData.type) ?? UIImage(named: "like")!
-    }
-    
-    public var text: NSMutableAttributedString {
-        if activityData.type == "price" {
-            let value = Int(activityData.value) ?? 0
-            
-            let priceString = NSMutableAttributedString(string: "$$$$$", attributes: [NSAttributedString.Key.font: UIFont.primary ?? UIFont.systemFont(ofSize: 18)])
-            
-            priceString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.accent, range: NSRange(location: 0,length: value+1))
-            
-            return priceString
-        } else {
-            return NSMutableAttributedString(string: activityData.value)
-        }
-    }
 }

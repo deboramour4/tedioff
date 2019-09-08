@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -133,7 +133,6 @@
 				BD84D2AC9B41CADCFCDCFE94 /* Pods-TedioffMVVM-RxSwiftUITests.debug.xcconfig */,
 				67F9A7208C6FB1630C20521C /* Pods-TedioffMVVM-RxSwiftUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -164,7 +163,7 @@
 			children = (
 				E5220427231BE7F80092C100 /* Info.plist */,
 				E5220418231BE7F30092C100 /* AppDelegate.swift */,
-				E522044B231BE8A70092C100 /* Controllers */,
+				E522044B231BE8A70092C100 /* ViewControllers */,
 				E5220449231BE89E0092C100 /* Model */,
 				E522044C231BE8B30092C100 /* Resources */,
 				E522044A231BE8A20092C100 /* View */,
@@ -213,12 +212,12 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		E522044B231BE8A70092C100 /* Controllers */ = {
+		E522044B231BE8A70092C100 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				E5266AF1231C00BF00B4AD3F /* ViewController.swift */,
 			);
-			path = Controllers;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		E522044C231BE8B30092C100 /* Resources */ = {

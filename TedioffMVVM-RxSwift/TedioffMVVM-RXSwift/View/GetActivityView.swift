@@ -12,19 +12,16 @@ import UIKit
 
 class GetActivityView: UIView {
     
-    // MARK: - Variables and Delegates
-    
-    weak var delegate: GetActivityViewDelegate?
-    
     // MARK: - UI elements
     
-    private lazy var newActivityButton: UIButton = {
+    lazy var newActivityButton: UIButton = {
         var button = UIButton(frame: .zero)
         button.backgroundColor = UIColor.accent
         button.setTitleColor(UIColor.white, for: .normal)
+        button.setTitleColor(UIColor.grayLighter, for: .highlighted)
+        button.setTitleColor(UIColor.gray, for: .disabled)
         button.titleLabel?.font = UIFont.button
         button.layer.cornerRadius = 16
-        button.addTarget(self, action: #selector(newActivitybuttonTapped), for: .touchUpInside)
         return button
     }()
     lazy var clearButton: UIButton = {
@@ -32,21 +29,20 @@ class GetActivityView: UIView {
         button.setTitleColor(UIColor.white, for: .normal)
         button.setTitleColor(UIColor.grayLighter, for: .highlighted)
         button.setTitleColor(UIColor.gray, for: .disabled)
-        button.addTarget(self, action: #selector(clearbuttonTapped), for: .touchUpInside)
         button.titleLabel?.font = UIFont.button
         return button
     }()
-    private lazy var backgroundView: UIView = {
+    lazy var backgroundView: UIView = {
         var view = UIView(frame: .zero)
         view.alpha = 0.0
         view.backgroundColor = UIColor.blackTransparent
         return view
     }()
-    private lazy var indicatorView: UIActivityIndicatorView = {
+    lazy var indicatorView: UIActivityIndicatorView = {
         var indicator = UIActivityIndicatorView(style: .whiteLarge)
         return indicator
     }()
-    private lazy var cardView: CardView = {
+    lazy var cardView: CardView = {
         var card = CardView(frame: .zero)
         return card
     }()
@@ -90,13 +86,6 @@ class GetActivityView: UIView {
         
         indicatorView.centralize(in: self)
     }
-
-    @objc private func newActivitybuttonTapped() {
-        delegate?.getNewActivity()
-    }
-    @objc private func clearbuttonTapped() {
-        delegate?.clearActivity()
-    }
     func startLoading() {
         UIView.animate(withDuration: 0.3) {
             self.backgroundView.alpha = 1.0
@@ -113,28 +102,10 @@ class GetActivityView: UIView {
         return self.cardView
     }
     
-    func setViewValues(newActivityButtonIsEnabled: Bool, newActivityButtonTitle: String,
-                       clearButtonIsEnabled: Bool, clearButtonTitle: String,
-                       emptyTitleIsHidden: Bool, emptyTitle: String?,
-                       isEmpty: Bool, isLoading: Bool,
-                       title: String?,
-                       type: (UIImage?, NSMutableAttributedString?),
-                       accessibility: (UIImage?, NSMutableAttributedString?),
-                       price: (UIImage?, NSMutableAttributedString?),
-                       participants: (UIImage?, NSMutableAttributedString?)) {
+    func setViewValues(newActivityButtonTitle: String,
+                       clearButtonTitle: String) {
         
-        newActivityButton.isEnabled = newActivityButtonIsEnabled
         newActivityButton.setTitle(newActivityButtonTitle, for: .normal)
-        clearButton.isEnabled = clearButtonIsEnabled
         clearButton.setTitle(clearButtonTitle, for: .normal)
-        
-        isLoading ? startLoading() : stopLoading()
-        
-        cardView.setViewValues(emptyTitleIsHidden: emptyTitleIsHidden, emptyTitle: emptyTitle, title: title, type: type, accessibility: accessibility, price: price, participants: participants)
     }
-}
-
-protocol GetActivityViewDelegate: class {
-    func getNewActivity()
-    func clearActivity()
 }

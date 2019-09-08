@@ -14,12 +14,12 @@ class CardRowView: UIView {
     
     // MARK: - UI elements
     
-    private lazy var imageView: UIImageView = {
+    lazy var imageView: UIImageView = {
         var image = UIImageView(frame: .zero)
         image.contentMode = .scaleAspectFit
         return image
     }()
-    private lazy var label: UILabel = {
+    lazy var label: UILabel = {
         var label = UILabel(frame: .zero)
         label.textColor = UIColor.black
         label.font = UIFont.primary
@@ -57,14 +57,16 @@ class CardRowView: UIView {
         
         label.anchor(leading: imageView.trailingAnchor, top: topAnchor, trailing: trailingAnchor, bottom: bottomAnchor, padding: UIEdgeInsets(top: 0, left: 32, bottom: 0, right: 0))
     }
-    func setImage(_ image: UIImage?) {
-        self.imageView.image = image
+    func setImage(named: String?) {
+        if let imageName = named {
+            imageView.image = UIImage(named: imageName)
+        }
     }
     func setText(_ text: NSMutableAttributedString?) {
         self.label.attributedText = text
     }
-    func setValues(_ image: UIImage?, _ text: NSMutableAttributedString?) {
-        self.setImage(image)
+    func setValues(_ imageName: String, _ text: NSMutableAttributedString?) {
+        self.setImage(named: imageName)
         self.setText(text)
     }
 }
