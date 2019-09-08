@@ -1,0 +1,847 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		01BBC39FC811E0A73DE1ECE7 /* Pods_TedioffMVVM_RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 665881C89A453AB05EAD3494 /* Pods_TedioffMVVM_RxSwift.framework */; };
+		1B2DFBAEE6E3DF31D8DAAC6B /* Pods_TedioffMVVM_RxSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69B1C224BBAF7E765A8BF6D0 /* Pods_TedioffMVVM_RxSwiftTests.framework */; };
+		58F72986CD9688B7216A444E /* Pods_TedioffMVVM_RxSwiftUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F47C802951B999AD187B3A08 /* Pods_TedioffMVVM_RxSwiftUITests.framework */; };
+		E5220419231BE7F30092C100 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5220418231BE7F30092C100 /* AppDelegate.swift */; };
+		E5220421231BE7F30092C100 /* TedioffMVVM.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E522041F231BE7F30092C100 /* TedioffMVVM.xcdatamodeld */; };
+		E5220423231BE7F80092C100 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5220422231BE7F80092C100 /* Assets.xcassets */; };
+		E5220426231BE7F80092C100 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5220424231BE7F80092C100 /* LaunchScreen.storyboard */; };
+		E5220431231BE7F80092C100 /* TedioffMVVM-RxSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5220430231BE7F80092C100 /* TedioffMVVM-RxSwiftTests.swift */; };
+		E522043C231BE7F80092C100 /* TedioffMVVM-RxSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E522043B231BE7F80092C100 /* TedioffMVVM-RxSwiftUITests.swift */; };
+		E5220458231BE8E80092C100 /* CardRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5220455231BE8E80092C100 /* CardRowView.swift */; };
+		E5220459231BE8E80092C100 /* GetActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5220456231BE8E80092C100 /* GetActivityView.swift */; };
+		E522045A231BE8E80092C100 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5220457231BE8E80092C100 /* CardView.swift */; };
+		E5220466231BEA3E0092C100 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5220465231BEA3E0092C100 /* MainViewModel.swift */; };
+		E5220468231BEA4E0092C100 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5220467231BEA4E0092C100 /* CardViewModel.swift */; };
+		E522046A231BEA5F0092C100 /* CardRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5220469231BEA5F0092C100 /* CardRowViewModel.swift */; };
+		E5266AF2231C00BF00B4AD3F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5266AF1231C00BF00B4AD3F /* ViewController.swift */; };
+		E564D10D2324350400819015 /* ActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564D10C2324350400819015 /* ActivityManager.swift */; };
+		E5F5F9C3231C61710094283D /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F5F9BF231C61710094283D /* Network.swift */; };
+		E5F5F9C4231C61710094283D /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F5F9C0231C61710094283D /* Activity.swift */; };
+		E5F5F9CB231C61F70094283D /* UIColor+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F5F9C8231C61F70094283D /* UIColor+Custom.swift */; };
+		E5F5F9CC231C61F70094283D /* UIFonts+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F5F9C9231C61F70094283D /* UIFonts+Custom.swift */; };
+		E5F5F9CD231C61F70094283D /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F5F9CA231C61F70094283D /* UIView+Constraints.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E522042D231BE7F80092C100 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E522040D231BE7F30092C100 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E5220414231BE7F30092C100;
+			remoteInfo = TedioffMVVM;
+		};
+		E5220438231BE7F80092C100 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E522040D231BE7F30092C100 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E5220414231BE7F30092C100;
+			remoteInfo = TedioffMVVM;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1D275A9886E30900272FBA36 /* Pods-TedioffMVVM-RxSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TedioffMVVM-RxSwift.debug.xcconfig"; path = "Target Support Files/Pods-TedioffMVVM-RxSwift/Pods-TedioffMVVM-RxSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		2ED00F6D06C4751E536A36C2 /* Pods-TedioffMVVM-RxSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TedioffMVVM-RxSwiftTests.release.xcconfig"; path = "Target Support Files/Pods-TedioffMVVM-RxSwiftTests/Pods-TedioffMVVM-RxSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
+		665881C89A453AB05EAD3494 /* Pods_TedioffMVVM_RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TedioffMVVM_RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		67F9A7208C6FB1630C20521C /* Pods-TedioffMVVM-RxSwiftUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TedioffMVVM-RxSwiftUITests.release.xcconfig"; path = "Target Support Files/Pods-TedioffMVVM-RxSwiftUITests/Pods-TedioffMVVM-RxSwiftUITests.release.xcconfig"; sourceTree = "<group>"; };
+		69B1C224BBAF7E765A8BF6D0 /* Pods_TedioffMVVM_RxSwiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TedioffMVVM_RxSwiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		783B3F3B3CF799B22C13F94F /* Pods-TedioffMVVM-RxSwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TedioffMVVM-RxSwiftTests.debug.xcconfig"; path = "Target Support Files/Pods-TedioffMVVM-RxSwiftTests/Pods-TedioffMVVM-RxSwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B83721B735235B9399637AA1 /* Pods-TedioffMVVM-RxSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TedioffMVVM-RxSwift.release.xcconfig"; path = "Target Support Files/Pods-TedioffMVVM-RxSwift/Pods-TedioffMVVM-RxSwift.release.xcconfig"; sourceTree = "<group>"; };
+		BD84D2AC9B41CADCFCDCFE94 /* Pods-TedioffMVVM-RxSwiftUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TedioffMVVM-RxSwiftUITests.debug.xcconfig"; path = "Target Support Files/Pods-TedioffMVVM-RxSwiftUITests/Pods-TedioffMVVM-RxSwiftUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E5220415231BE7F30092C100 /* TedioffMVVM-RxSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TedioffMVVM-RxSwift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5220418231BE7F30092C100 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E5220420231BE7F30092C100 /* TedioffMVVM.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TedioffMVVM.xcdatamodel; sourceTree = "<group>"; };
+		E5220422231BE7F80092C100 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E5220425231BE7F80092C100 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E5220427231BE7F80092C100 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E522042C231BE7F80092C100 /* TedioffMVVM-RxSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TedioffMVVM-RxSwiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5220430231BE7F80092C100 /* TedioffMVVM-RxSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TedioffMVVM-RxSwiftTests.swift"; sourceTree = "<group>"; };
+		E5220432231BE7F80092C100 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5220437231BE7F80092C100 /* TedioffMVVM-RxSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TedioffMVVM-RxSwiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E522043B231BE7F80092C100 /* TedioffMVVM-RxSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TedioffMVVM-RxSwiftUITests.swift"; sourceTree = "<group>"; };
+		E522043D231BE7F80092C100 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5220455231BE8E80092C100 /* CardRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardRowView.swift; sourceTree = "<group>"; };
+		E5220456231BE8E80092C100 /* GetActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetActivityView.swift; sourceTree = "<group>"; };
+		E5220457231BE8E80092C100 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		E5220465231BEA3E0092C100 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		E5220467231BEA4E0092C100 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
+		E5220469231BEA5F0092C100 /* CardRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRowViewModel.swift; sourceTree = "<group>"; };
+		E5266AF1231C00BF00B4AD3F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E564D10C2324350400819015 /* ActivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityManager.swift; sourceTree = "<group>"; };
+		E5F5F9BF231C61710094283D /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		E5F5F9C0231C61710094283D /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		E5F5F9C8231C61F70094283D /* UIColor+Custom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Custom.swift"; sourceTree = "<group>"; };
+		E5F5F9C9231C61F70094283D /* UIFonts+Custom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFonts+Custom.swift"; sourceTree = "<group>"; };
+		E5F5F9CA231C61F70094283D /* UIView+Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
+		F47C802951B999AD187B3A08 /* Pods_TedioffMVVM_RxSwiftUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TedioffMVVM_RxSwiftUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E5220412231BE7F30092C100 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01BBC39FC811E0A73DE1ECE7 /* Pods_TedioffMVVM_RxSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5220429231BE7F80092C100 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B2DFBAEE6E3DF31D8DAAC6B /* Pods_TedioffMVVM_RxSwiftTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5220434231BE7F80092C100 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58F72986CD9688B7216A444E /* Pods_TedioffMVVM_RxSwiftUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		341E11FE358239E620467BF4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				665881C89A453AB05EAD3494 /* Pods_TedioffMVVM_RxSwift.framework */,
+				69B1C224BBAF7E765A8BF6D0 /* Pods_TedioffMVVM_RxSwiftTests.framework */,
+				F47C802951B999AD187B3A08 /* Pods_TedioffMVVM_RxSwiftUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B08EA459FA7F2F5E9E34AF38 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1D275A9886E30900272FBA36 /* Pods-TedioffMVVM-RxSwift.debug.xcconfig */,
+				B83721B735235B9399637AA1 /* Pods-TedioffMVVM-RxSwift.release.xcconfig */,
+				783B3F3B3CF799B22C13F94F /* Pods-TedioffMVVM-RxSwiftTests.debug.xcconfig */,
+				2ED00F6D06C4751E536A36C2 /* Pods-TedioffMVVM-RxSwiftTests.release.xcconfig */,
+				BD84D2AC9B41CADCFCDCFE94 /* Pods-TedioffMVVM-RxSwiftUITests.debug.xcconfig */,
+				67F9A7208C6FB1630C20521C /* Pods-TedioffMVVM-RxSwiftUITests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E522040C231BE7F30092C100 = {
+			isa = PBXGroup;
+			children = (
+				E5220417231BE7F30092C100 /* TedioffMVVM-RXSwift */,
+				E522042F231BE7F80092C100 /* TedioffMVVM-RXSwiftTests */,
+				E522043A231BE7F80092C100 /* TedioffMVVM-RXSwiftUITests */,
+				E5220416231BE7F30092C100 /* Products */,
+				B08EA459FA7F2F5E9E34AF38 /* Pods */,
+				341E11FE358239E620467BF4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E5220416231BE7F30092C100 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E5220415231BE7F30092C100 /* TedioffMVVM-RxSwift.app */,
+				E522042C231BE7F80092C100 /* TedioffMVVM-RxSwiftTests.xctest */,
+				E5220437231BE7F80092C100 /* TedioffMVVM-RxSwiftUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E5220417231BE7F30092C100 /* TedioffMVVM-RXSwift */ = {
+			isa = PBXGroup;
+			children = (
+				E5220427231BE7F80092C100 /* Info.plist */,
+				E5220418231BE7F30092C100 /* AppDelegate.swift */,
+				E522044B231BE8A70092C100 /* Controllers */,
+				E5220449231BE89E0092C100 /* Model */,
+				E522044C231BE8B30092C100 /* Resources */,
+				E522044A231BE8A20092C100 /* View */,
+				E5220464231BE9C20092C100 /* ViewModel */,
+			);
+			path = "TedioffMVVM-RXSwift";
+			sourceTree = "<group>";
+		};
+		E522042F231BE7F80092C100 /* TedioffMVVM-RXSwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				E5220430231BE7F80092C100 /* TedioffMVVM-RxSwiftTests.swift */,
+				E5220432231BE7F80092C100 /* Info.plist */,
+			);
+			path = "TedioffMVVM-RXSwiftTests";
+			sourceTree = "<group>";
+		};
+		E522043A231BE7F80092C100 /* TedioffMVVM-RXSwiftUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E522043B231BE7F80092C100 /* TedioffMVVM-RxSwiftUITests.swift */,
+				E522043D231BE7F80092C100 /* Info.plist */,
+			);
+			path = "TedioffMVVM-RXSwiftUITests";
+			sourceTree = "<group>";
+		};
+		E5220449231BE89E0092C100 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E522041F231BE7F30092C100 /* TedioffMVVM.xcdatamodeld */,
+				E5F5F9C0231C61710094283D /* Activity.swift */,
+				E5F5F9BF231C61710094283D /* Network.swift */,
+				E564D10C2324350400819015 /* ActivityManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E522044A231BE8A20092C100 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E5F5F9C7231C61F70094283D /* Extensions */,
+				E5220456231BE8E80092C100 /* GetActivityView.swift */,
+				E5220457231BE8E80092C100 /* CardView.swift */,
+				E5220455231BE8E80092C100 /* CardRowView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E522044B231BE8A70092C100 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E5266AF1231C00BF00B4AD3F /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E522044C231BE8B30092C100 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E5220422231BE7F80092C100 /* Assets.xcassets */,
+				E5220424231BE7F80092C100 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E5220464231BE9C20092C100 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E5220465231BEA3E0092C100 /* MainViewModel.swift */,
+				E5220467231BEA4E0092C100 /* CardViewModel.swift */,
+				E5220469231BEA5F0092C100 /* CardRowViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E5F5F9C7231C61F70094283D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E5F5F9C8231C61F70094283D /* UIColor+Custom.swift */,
+				E5F5F9C9231C61F70094283D /* UIFonts+Custom.swift */,
+				E5F5F9CA231C61F70094283D /* UIView+Constraints.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E5220414231BE7F30092C100 /* TedioffMVVM-RxSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E5220440231BE7F80092C100 /* Build configuration list for PBXNativeTarget "TedioffMVVM-RxSwift" */;
+			buildPhases = (
+				AD8DEBD790EE05E09C9077DA /* [CP] Check Pods Manifest.lock */,
+				E5220411231BE7F30092C100 /* Sources */,
+				E5220412231BE7F30092C100 /* Frameworks */,
+				E5220413231BE7F30092C100 /* Resources */,
+				B5E9198EC57044683670A80B /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TedioffMVVM-RxSwift";
+			productName = TedioffMVVM;
+			productReference = E5220415231BE7F30092C100 /* TedioffMVVM-RxSwift.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E522042B231BE7F80092C100 /* TedioffMVVM-RxSwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E5220443231BE7F80092C100 /* Build configuration list for PBXNativeTarget "TedioffMVVM-RxSwiftTests" */;
+			buildPhases = (
+				9D6D80BD35C5DC511CE8B604 /* [CP] Check Pods Manifest.lock */,
+				E5220428231BE7F80092C100 /* Sources */,
+				E5220429231BE7F80092C100 /* Frameworks */,
+				E522042A231BE7F80092C100 /* Resources */,
+				47D078490C4B3268CB2D75FD /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E522042E231BE7F80092C100 /* PBXTargetDependency */,
+			);
+			name = "TedioffMVVM-RxSwiftTests";
+			productName = TedioffMVVMTests;
+			productReference = E522042C231BE7F80092C100 /* TedioffMVVM-RxSwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E5220436231BE7F80092C100 /* TedioffMVVM-RxSwiftUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E5220446231BE7F80092C100 /* Build configuration list for PBXNativeTarget "TedioffMVVM-RxSwiftUITests" */;
+			buildPhases = (
+				7F928A07A20B3830EB04989C /* [CP] Check Pods Manifest.lock */,
+				E5220433231BE7F80092C100 /* Sources */,
+				E5220434231BE7F80092C100 /* Frameworks */,
+				E5220435231BE7F80092C100 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E5220439231BE7F80092C100 /* PBXTargetDependency */,
+			);
+			name = "TedioffMVVM-RxSwiftUITests";
+			productName = TedioffMVVMUITests;
+			productReference = E5220437231BE7F80092C100 /* TedioffMVVM-RxSwiftUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E522040D231BE7F30092C100 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1030;
+				LastUpgradeCheck = 1030;
+				ORGANIZATIONNAME = "Débora Oliveira";
+				TargetAttributes = {
+					E5220414231BE7F30092C100 = {
+						CreatedOnToolsVersion = 10.3;
+					};
+					E522042B231BE7F80092C100 = {
+						CreatedOnToolsVersion = 10.3;
+						TestTargetID = E5220414231BE7F30092C100;
+					};
+					E5220436231BE7F80092C100 = {
+						CreatedOnToolsVersion = 10.3;
+						TestTargetID = E5220414231BE7F30092C100;
+					};
+				};
+			};
+			buildConfigurationList = E5220410231BE7F30092C100 /* Build configuration list for PBXProject "TedioffMVVM-RxSwift" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E522040C231BE7F30092C100;
+			productRefGroup = E5220416231BE7F30092C100 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E5220414231BE7F30092C100 /* TedioffMVVM-RxSwift */,
+				E522042B231BE7F80092C100 /* TedioffMVVM-RxSwiftTests */,
+				E5220436231BE7F80092C100 /* TedioffMVVM-RxSwiftUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E5220413231BE7F30092C100 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5220426231BE7F80092C100 /* LaunchScreen.storyboard in Resources */,
+				E5220423231BE7F80092C100 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E522042A231BE7F80092C100 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5220435231BE7F80092C100 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		47D078490C4B3268CB2D75FD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TedioffMVVM-RxSwiftTests/Pods-TedioffMVVM-RxSwiftTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TedioffMVVM-RxSwiftTests/Pods-TedioffMVVM-RxSwiftTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TedioffMVVM-RxSwiftTests/Pods-TedioffMVVM-RxSwiftTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7F928A07A20B3830EB04989C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TedioffMVVM-RxSwiftUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9D6D80BD35C5DC511CE8B604 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TedioffMVVM-RxSwiftTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD8DEBD790EE05E09C9077DA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TedioffMVVM-RxSwift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B5E9198EC57044683670A80B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TedioffMVVM-RxSwift/Pods-TedioffMVVM-RxSwift-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TedioffMVVM-RxSwift/Pods-TedioffMVVM-RxSwift-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TedioffMVVM-RxSwift/Pods-TedioffMVVM-RxSwift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E5220411231BE7F30092C100 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5F5F9CB231C61F70094283D /* UIColor+Custom.swift in Sources */,
+				E5220458231BE8E80092C100 /* CardRowView.swift in Sources */,
+				E5220419231BE7F30092C100 /* AppDelegate.swift in Sources */,
+				E5F5F9CC231C61F70094283D /* UIFonts+Custom.swift in Sources */,
+				E5F5F9C3231C61710094283D /* Network.swift in Sources */,
+				E5F5F9C4231C61710094283D /* Activity.swift in Sources */,
+				E522045A231BE8E80092C100 /* CardView.swift in Sources */,
+				E564D10D2324350400819015 /* ActivityManager.swift in Sources */,
+				E5220466231BEA3E0092C100 /* MainViewModel.swift in Sources */,
+				E5220459231BE8E80092C100 /* GetActivityView.swift in Sources */,
+				E5220421231BE7F30092C100 /* TedioffMVVM.xcdatamodeld in Sources */,
+				E5220468231BEA4E0092C100 /* CardViewModel.swift in Sources */,
+				E5266AF2231C00BF00B4AD3F /* ViewController.swift in Sources */,
+				E522046A231BEA5F0092C100 /* CardRowViewModel.swift in Sources */,
+				E5F5F9CD231C61F70094283D /* UIView+Constraints.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5220428231BE7F80092C100 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5220431231BE7F80092C100 /* TedioffMVVM-RxSwiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5220433231BE7F80092C100 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E522043C231BE7F80092C100 /* TedioffMVVM-RxSwiftUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E522042E231BE7F80092C100 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E5220414231BE7F30092C100 /* TedioffMVVM-RxSwift */;
+			targetProxy = E522042D231BE7F80092C100 /* PBXContainerItemProxy */;
+		};
+		E5220439231BE7F80092C100 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E5220414231BE7F30092C100 /* TedioffMVVM-RxSwift */;
+			targetProxy = E5220438231BE7F80092C100 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E5220424231BE7F80092C100 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E5220425231BE7F80092C100 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E522043E231BE7F80092C100 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E522043F231BE7F80092C100 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E5220441231BE7F80092C100 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D275A9886E30900272FBA36 /* Pods-TedioffMVVM-RxSwift.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4YUW7D4357;
+				INFOPLIST_FILE = "TedioffMVVM-RXSwift/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "deboraoliveira.TedioffMVVM-RxSwift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E5220442231BE7F80092C100 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B83721B735235B9399637AA1 /* Pods-TedioffMVVM-RxSwift.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4YUW7D4357;
+				INFOPLIST_FILE = "TedioffMVVM-RXSwift/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "deboraoliveira.TedioffMVVM-RxSwift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E5220444231BE7F80092C100 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 783B3F3B3CF799B22C13F94F /* Pods-TedioffMVVM-RxSwiftTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4YUW7D4357;
+				INFOPLIST_FILE = TedioffMVVMTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = deboraoliveira.TedioffMVVMTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TedioffMVVM-RxSwift.app/TedioffMVVM-RxSwift";
+			};
+			name = Debug;
+		};
+		E5220445231BE7F80092C100 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ED00F6D06C4751E536A36C2 /* Pods-TedioffMVVM-RxSwiftTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4YUW7D4357;
+				INFOPLIST_FILE = TedioffMVVMTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = deboraoliveira.TedioffMVVMTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TedioffMVVM-RxSwift.app/TedioffMVVM-RxSwift";
+			};
+			name = Release;
+		};
+		E5220447231BE7F80092C100 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD84D2AC9B41CADCFCDCFE94 /* Pods-TedioffMVVM-RxSwiftUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4YUW7D4357;
+				INFOPLIST_FILE = TedioffMVVMUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = deboraoliveira.TedioffMVVMUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TedioffMVVM;
+			};
+			name = Debug;
+		};
+		E5220448231BE7F80092C100 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67F9A7208C6FB1630C20521C /* Pods-TedioffMVVM-RxSwiftUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4YUW7D4357;
+				INFOPLIST_FILE = TedioffMVVMUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = deboraoliveira.TedioffMVVMUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TedioffMVVM;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E5220410231BE7F30092C100 /* Build configuration list for PBXProject "TedioffMVVM-RxSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E522043E231BE7F80092C100 /* Debug */,
+				E522043F231BE7F80092C100 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E5220440231BE7F80092C100 /* Build configuration list for PBXNativeTarget "TedioffMVVM-RxSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5220441231BE7F80092C100 /* Debug */,
+				E5220442231BE7F80092C100 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E5220443231BE7F80092C100 /* Build configuration list for PBXNativeTarget "TedioffMVVM-RxSwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5220444231BE7F80092C100 /* Debug */,
+				E5220445231BE7F80092C100 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E5220446231BE7F80092C100 /* Build configuration list for PBXNativeTarget "TedioffMVVM-RxSwiftUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5220447231BE7F80092C100 /* Debug */,
+				E5220448231BE7F80092C100 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E522041F231BE7F30092C100 /* TedioffMVVM.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E5220420231BE7F30092C100 /* TedioffMVVM.xcdatamodel */,
+			);
+			currentVersion = E5220420231BE7F30092C100 /* TedioffMVVM.xcdatamodel */;
+			path = TedioffMVVM.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = E522040D231BE7F30092C100 /* Project object */;
+}

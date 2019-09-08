@@ -1,0 +1,6 @@
+framework module Pods_TedioffMVVM_RxSwiftTests {
+  umbrella header "Pods-TedioffMVVM-RxSwiftTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
