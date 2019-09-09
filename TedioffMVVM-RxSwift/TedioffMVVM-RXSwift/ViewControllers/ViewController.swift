@@ -83,26 +83,45 @@ class ViewController: UIViewController {
             .bind(to: mainView.cardView.emptyLabel.rx.isHidden)
             .disposed(by: disposeBag)
         
-        // Rows
-        mainViewModel.cardViewModel.cardRowViewModels[0].imageName
-            .bind(to: mainView.cardView.rx.rowTypeImageName)
-            .disposed(by: disposeBag)
+        // Card Rows View
+//        Observable
+//        .combineLatest(mainViewModel.cardViewModel.getCardRow(with: .type).type,
+//                       mainViewModel.cardViewModel.getCardRow(with: .type).text)
+//        .bind(to: mainView.cardView.rx.cardRow)
+//        .disposed(by: disposeBag)
         
-        mainViewModel.cardViewModel.cardRowViewModels[0].text
-            .bind(to: mainView.cardView.rx.type)
-            .disposed(by: disposeBag)
+        for i in 0..<4  {
+            Observable
+                .combineLatest(mainViewModel.cardViewModel.cardRowViewModels[i].type,
+                               mainViewModel.cardViewModel.cardRowViewModels[i].text)
+                .bind(to: mainView.cardView.rx.cardRow)
+                .disposed(by: disposeBag)
+        }
+    
     }
 }
 
 private extension Reactive where Base: CardView {
-    var rowTypeImageName: Binder<String?> {
-        return Binder(base) { view, name in
-            view.typeRowView.setImage(named: name)
-        }
-    }
-    var type: Binder<NSMutableAttributedString?> {
-        return Binder(base) { view, value in
-            view.typeRowView.setText(value)
+    
+    var cardRow: Binder<(ActivityAttributes, NSMutableAttributedString?)> {
+        return Binder(base) { view, rowData in
+            
+            var imageName: String? = rowData.0.rawValue
+            let value = rowData.1
+            
+            if value == nil { imageName = nil }
+            
+            switch rowData.0 {
+                case .type:
+                    view.typeRowView.setValues(imageName, value)
+                case .accessibility:
+                    view.accessibilityRowView.setValues(imageName, value)
+                case .price:
+                    view.priceRowView.setValues(imageName, value)
+                case .participants:
+                    view.participantsRowView.setValues(imageName, value)
+            }
+            
         }
     }
 }

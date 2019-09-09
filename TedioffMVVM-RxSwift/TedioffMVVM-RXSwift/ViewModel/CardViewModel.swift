@@ -12,15 +12,12 @@ import RxCocoa
 
 // MARK: - CardViewModel
 
-class CardViewModel {
+struct CardViewModel {
     
     // MARK: - Variables
     
     private let disposeBag = DisposeBag()
-    
-    //Inputs
-    public let activity = PublishSubject<Activity?>()
-    
+
     //Outputs
     public let title: Observable<String?>
     public let type: Observable<String?>
@@ -29,21 +26,19 @@ class CardViewModel {
     public let participants: Observable<String?>
     public let emptyTitleIsHidden: Observable<Bool>
     public let emptyTitle: Observable<String>
-    
     public let cardRowViewModels: [CardRowViewModel]
 
     // MARK: - Initializers
     
-    init() {
-        cardRowViewModels = [CardRowViewModel(), CardRowViewModel(), CardRowViewModel(), CardRowViewModel()]
-    
+    init(activity: Observable<Activity?>) {
+        
         emptyTitle = .just("Nothing to show")
         
         emptyTitleIsHidden = activity
             .map { $0 == nil ? false : true }
         
         title = activity
-            .map { return $0?.activity }
+            .map { $0?.activity }
         
         type = activity
             .map { $0?.type.rawValue.capitalized }
@@ -65,8 +60,20 @@ class CardViewModel {
                 }
             }
         
-        // update row data from
-        
-        
+        cardRowViewModels = [CardRowViewModel(type: ActivityAttributes.type, value: type),
+                             CardRowViewModel(type: ActivityAttributes.accessibility,value: accessibility),
+                             CardRowViewModel(type: ActivityAttributes.price, value: price),
+                             CardRowViewModel(type: ActivityAttributes.participants, value: participants)]
+    }
+    
+    // not working
+    func getCardRow(with type: ActivityAttributes) -> CardRowViewModel {
+        let filtered = self.cardRowViewModels.filter { (card) -> Bool in
+            var actualType: ActivityAttributes?
+            _ = card.type.map { actualType = $0 }
+            return actualType == type
+        }
+        guard let cardRow = filtered.first else { return CardRowViewModel() }
+        return cardRow
     }
 }

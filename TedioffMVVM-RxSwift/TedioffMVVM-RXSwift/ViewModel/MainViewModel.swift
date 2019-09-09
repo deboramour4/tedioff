@@ -15,13 +15,15 @@ import RxCocoa
 class MainViewModel {
     
     // MARK: - Variables
-    
+
     private let disposeBag = DisposeBag()
     private let service: ActivityManager
     
-    // Inputs
+    // Inputs UI
     public let tappedNew = PublishRelay<Void>()
     public let tappedClear = PublishRelay<Void>()
+    
+    // Inputs Network
     public let activity = PublishSubject<Activity?>()
     
     // Outputs
@@ -37,10 +39,10 @@ class MainViewModel {
     init(service: ActivityManager = ActivityManager()) {
         self.service = service
         
-        //FiXME: É assim mesmo?
         newActivityButtonTitle = .just("New activity")
         clearButtonTitle = .just("Clear")
-        cardViewModel = CardViewModel()
+        
+        cardViewModel = CardViewModel(activity: activity)
         
         isLoading = Observable.merge(
             tappedNew.map { true },
@@ -55,7 +57,6 @@ class MainViewModel {
             activity.map { $0 == nil ? false : true })
             .startWith(false)
         
-        // FIXME: actions. map?
         tappedNew
             .subscribe(onNext: { [weak self] _ in
                 self?.fetchNewActivity()
@@ -67,18 +68,9 @@ class MainViewModel {
                 self?.activity.onNext(nil)
             })
             .disposed(by: disposeBag)
-        
-        
-        activity
-            .startWith(nil)
-            .subscribe(onNext: { [weak self] (new) in
-                self?.cardViewModel.activity.onNext(new)
-            })
-            .disposed(by: disposeBag)
-    
     }
     
-    // return activity here?
+    // Return activity here?
     func fetchNewActivity() {
         service.getActivity { [weak self] (activity) in
             self?.activity.onNext(activity)

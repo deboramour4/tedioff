@@ -57,16 +57,13 @@ class CardRowView: UIView {
         
         label.anchor(leading: imageView.trailingAnchor, top: topAnchor, trailing: trailingAnchor, bottom: bottomAnchor, padding: UIEdgeInsets(top: 0, left: 32, bottom: 0, right: 0))
     }
-    func setImage(named: String?) {
-        if let imageName = named {
+
+    func setValues(_ imageName: String?, _ text: NSMutableAttributedString?) {
+        if let imageName = imageName {
             imageView.image = UIImage(named: imageName)
+        } else {
+            imageView.image = nil
         }
-    }
-    func setText(_ text: NSMutableAttributedString?) {
-        self.label.attributedText = text
-    }
-    func setValues(_ imageName: String, _ text: NSMutableAttributedString?) {
-        self.setImage(named: imageName)
-        self.setText(text)
+        label.attributedText = text
     }
 }

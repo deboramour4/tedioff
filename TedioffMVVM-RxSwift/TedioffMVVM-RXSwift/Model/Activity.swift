@@ -10,6 +10,13 @@ import Foundation
 
 // MARK: - Activity
 
+enum ActivityAttributes: String {
+    case type
+    case accessibility
+    case price
+    case participants
+}
+
 class Activity: Decodable {
     
     // MARK: - ActivityType
@@ -32,10 +39,10 @@ class Activity: Decodable {
     // MARK - Properties
     
     var activity: String
-    var accessibility: Float
     var type: ActivityType
-    var participants: Int
+    var accessibility: Float
     var price: Float
+    var participants: Int
     var link: String?
     var key: String
     
@@ -50,4 +57,5 @@ class Activity: Decodable {
         self.link = link
         self.key = key
     }
+    
 }

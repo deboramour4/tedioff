@@ -10,35 +10,26 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-// How to fix this?
-import UIKit
-
 // MARK: - CardRowViewModel
 
 struct CardRowViewModel {
-    
-    // Inputs
-    public let activityData = PublishSubject<(type: String, value: String)?>()
-    
-    public let value: String? = nil
-    
+        
     // Outputs
-    public let imageName: Observable<String?>
+    public let type: Observable<ActivityAttributes>
     public let text: Observable<NSMutableAttributedString?>
     
     // MARK: - Initializers
     
-    init() {
+    init(type: ActivityAttributes = .type, value: Observable<String?> = .just(nil)) {
         
-        imageName  = activityData
-            .map { $0 == nil ? nil : $0?.type }
+        self.type = .just(type)
         
-        text = activityData
+        text = value
             .map {
-                guard let data = $0 else { return nil }
+                guard let value = $0 else { return nil }
                 
-                if data.type == "price" {
-                    let value = Int(data.value) ?? 0
+                if type == .price {
+                    let value = Int(value) ?? 0
         
                     let priceString = NSMutableAttributedString(string: "$$$$$", attributes: [NSAttributedString.Key.font: UIFont.primary ?? UIFont.systemFont(ofSize: 18)])
         
@@ -46,7 +37,7 @@ struct CardRowViewModel {
         
                     return priceString
                 } else {
-                    return NSMutableAttributedString(string: data.value)
+                    return NSMutableAttributedString(string: value)
                 }
             }
     }
