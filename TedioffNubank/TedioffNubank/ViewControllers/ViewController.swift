@@ -31,6 +31,10 @@ class ViewController: UIViewController {
         return self.mainView.newActivityButton.rx.tap
     }()
     
+    lazy var clear: ControlEvent<Void> = {
+        return self.mainView.clearButton.rx.tap
+    }()
+    
     func bind(_ viewModel: MainViewModel) {
         viewModel.configure(mainView)
     }

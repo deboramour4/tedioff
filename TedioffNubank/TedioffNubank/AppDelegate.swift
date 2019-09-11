@@ -16,12 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    // FIXME: Problaby that's not correct
-    static var status = BehaviorRelay(value: ViewStatus.empty)
+    // FIXME: Just a variable to simulate the change of status
+    static var status = PublishSubject<ViewStatus>()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let controller = Controller(status: AppDelegate.status.asObservable())
+        let controller = Controller(status: AppDelegate.status)
+        
+        AppDelegate.status.onNext(.empty)
         
         let navControl = UINavigationController(rootViewController: controller.viewController)
         

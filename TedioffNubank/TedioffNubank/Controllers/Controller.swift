@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import RxCocoa
 import RxSwift
+import RxCocoa
 
 // MARK: - ViewStatus
 
@@ -31,12 +31,15 @@ class Controller {
     
     // MARK: - Variables
     
-//    let disposeBag = DisposeBag()
+    let disposeBag = DisposeBag()
     let viewController: ViewController
     let activityManager: ActivityManager
     
     lazy var action: Observable<Action> = {
-        return self.viewController.confirm.map { .confirm }
+        return Observable.merge(
+            self.viewController.confirm.map { .confirm },
+            self.viewController.clear.map { .clear }
+        )
     }()
     
     // MARK: - Initialization
@@ -59,7 +62,7 @@ class Controller {
                 let viewModel = MainViewModel(status: status)
                 viewController.bind(viewModel)
             })
-//            .disposed(by: disposeBag)
+//          .disposed(by: disposeBag)
     }
     
     func subscribe(toAction action: Observable<Action>) {
@@ -68,24 +71,22 @@ class Controller {
                 switch action {
                     
                 case .confirm:
-                    
-                    AppDelegate.status.accept(.loading)
+                    AppDelegate.status.onNext(.loading)
                     activityManager.getActivity({ (activity) in
                         if let activity = activity {
-                            AppDelegate.status.accept(ViewStatus.showing(activity))
+                            AppDelegate.status.onNext(ViewStatus.showing(activity))
                         } else {
-                            AppDelegate.status.accept(.empty)
+                            AppDelegate.status.onNext(.empty)
                         }
                     })
                     return .empty()
                     
                 case .clear:
-                    
-                    AppDelegate.status.accept(.empty)
+                    AppDelegate.status.onNext(.empty)
                     return .empty()
                 }
             })
             .subscribe()
-//            .disposed(by: disposeBag)
+//          .disposed(by: disposeBag)
     }
 }
