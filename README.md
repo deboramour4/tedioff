@@ -10,7 +10,7 @@ This repository brings together multiple versions of the same application - Tedi
 - mvvm-rxswift
 - nubank-architecture
 
-It's important to say that it was created with the purpose of learning. So it might have some equivocates implementations from a specific architecture (since I'm in continuous learning about all that). Feedbacks are always welcome 💜 Feel free to open a new **issue** if you want to tell me something.
+It's important to say that it was created with the purpose of learning. So it might be constantly updated (since I'm in continuous learning about all that). Feedbacks are always welcome 💜 Feel free to open a new **issue** if you want to tell me something.
 
 The details of each version of the app in the description below.
 
