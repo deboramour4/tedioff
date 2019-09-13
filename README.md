@@ -45,4 +45,14 @@ To run this version of **Tedioff** you must:
 
 ### Nubank Architecture Version (with RxSwift)
 
+Finally, I implemented a version of Tedioff inspired by the architecture used at [Nubank](https://nubank.com.br/). This architecture was very inspired by [The Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) from Uncle Bob, which gives the decoupling, testability and single responsibility necessary for the company. You can see more about Nubank's architecture at [this link](https://medium.com/building-nubank/ios-app-architecture-part-1-building-screens-bf8cd9a544e). This projects uses RxSwift to bind data.
+
+To run this version of **Tedioff** you must:
+1. select the branch `nubank-architecture`
+1. download the ZIP file or clone the repository
+1. open your console at the project's folder
+1. run the command `pod install`
+1. open the *TedioffNubank.xcworkspace* file
+1. run the project - *CMD + R*
+
 
